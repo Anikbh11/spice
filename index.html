@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPICE — Simulation Atlas</title>
+<style>
+:root{
+  --bg:#f4f1ea;
+  --ink:#1a1816;
+  --muted:#7a7368;
+  --accent:#8c7c69;
+  --line:rgba(0,0,0,0.08);
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.72}
+h1,h2,h3{font-family:Georgia,serif;font-weight:500;letter-spacing:-0.02em}
+a{color:inherit;text-decoration:none}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+.container{max-width:1200px;margin:auto;padding:2rem}
+nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:5rem}
+nav .logo{font-family:Georgia,serif;font-size:1.4rem}
+nav .links a{margin-left:1.5rem;color:var(--muted);font-size:.9rem}
+nav .links a:hover{color:var(--ink)}
+.hero{margin-bottom:6rem}
+.hero-title{font-size:4.5rem;line-height:1;margin-bottom:.55rem}
+.hero-subtitle{font-size:1.52rem;color:var(--muted);white-space:nowrap;margin-bottom:2rem;font-family:Georgia,serif;font-weight:500}
+.hero p{max-width:680px;color:var(--muted)}
+.hero-image{margin-top:3rem;height:420px;border-radius:var(--radius);overflow:hidden;background:
+radial-gradient(circle at 30% 30%, #dcd6cc, transparent 40%),
+radial-gradient(circle at 70% 40%, #e7e1d8, transparent 40%),
+linear-gradient(135deg,#ddd,#eee)}
+.hero-image img,.hero-image video{width:100%;height:100%;object-fit:cover;display:block}
+.section{margin-bottom:6rem}
+.section h2{font-size:2.2rem;margin-bottom:1.1rem}
+.text,.lead{max-width:700px;color:var(--muted)}
+.projects{margin-top:2rem}
+.project{margin-bottom:2.5rem}
+.project h3{font-size:1.3rem;margin-bottom:.4rem}
+.project h3 a{color:var(--ink);border-bottom:1px solid transparent;transition:.2s ease}
+.project h3 a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.project p{color:var(--muted)}
+.visual-grid{display:grid;grid-template-columns:2fr 1fr;gap:1rem;margin-top:2rem}
+.visual-large,.media-block,.visual-small div{border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#dcd6cc,#eee)}
+.visual-large{height:320px}
+.visual-small{display:grid;gap:1rem}
+.visual-small div{height:150px}
+.visual-large img,.visual-large video,.visual-small img,.visual-small video{width:100%;height:100%;object-fit:cover;display:block}
+.people{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;max-width:600px;color:var(--muted)}
+.data-table{width:100%;margin-top:2rem;border-collapse:collapse}
+.data-table td,.data-table th{padding:.8rem 0;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.data-table th{color:var(--muted);font-size:.85rem;font-weight:500}
+.data-link{color:var(--accent);border-bottom:1px solid transparent}
+.data-link:hover{border-bottom-color:var(--accent)}
+.contact{max-width:560px}
+.contact div{margin:1rem 0}
+.contact a{color:var(--accent)}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .9s ease, transform .9s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+@media(max-width:900px){
+  .hero-title{font-size:3rem}
+  .hero-subtitle{white-space:normal;font-size:1.2rem}
+  .visual-grid{grid-template-columns:1fr}
+  .people{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<nav>
+  <div class="logo">SPICE</div>
+  <div class="links">
+    <a href="#intro">Intro</a>
+    <a href="#projects">Projects</a>
+    <a href="#people">People</a>
+    <a href="#visual">Visuals</a>
+    <a href="#data">Data</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero fade-in" id="intro">
+  <h1 class="hero-title">SPICE</h1>
+  <h2 class="hero-subtitle">Connecting stellar feedback in the first galaxies and cosmic reionisation</h2>
+  <p>SPICE is a radiation-hydrodynamics simulation programme exploring how galaxies form and how their radiation reshapes the Universe. It connects small-scale physics with cosmic-scale evolution in a single coherent framework.</p>
+  <p>The simulations follow how stars form, generate ionising photons, and alter their surrounding gas, while also tracing how these local processes contribute to the large-scale topology of reionisation across cosmological volumes.</p>
+  <div class="hero-image"></div>
+</section>
+
+<section class="section fade-in" id="projects">
+  <h2>Projects</h2>
+  <p class="text">SPICE supports a growing set of published, ongoing, and planned projects. This section works both as an overview and as a gateway into dedicated project pages, papers, figure collections, or data notes.</p>
+  <div class="projects">
+    <div class="project">
+      <h3><a href="project-ionising-escape.html">Ionising escape from early galaxies</a></h3>
+      <p>How ionising radiation escapes from high-redshift galaxies, how strongly it varies in time, and how stellar feedback opens or closes low-density channels through the ISM.</p>
+      <p class="lead">Project page, paper page, arXiv entry, or GitHub subpage.</p>
+    </div>
+    <div class="project">
+      <h3><a href="project-reionisation-structure.html">Reionisation structure and topology</a></h3>
+      <p>Large-scale ionised regions, source clustering, environmental dependence, and the geometry of reionisation across the cosmic web.</p>
+      <p class="lead">Use this layout for flagship science themes with image galleries or summary figures.</p>
+    </div>
+    <div class="project">
+      <h3><a href="project-galaxy-statistics.html">Galaxy statistics during reionisation</a></h3>
+      <p>Galaxy growth, UV luminosity functions, stellar mass assembly, and direct comparisons to high-redshift observations.</p>
+      <p class="lead">A good place to link a paper, notebook, or a small results archive.</p>
+    </div>
+    <div class="project">
+      <h3><a href="project-mock-observables.html">Mock observables and synthetic surveys</a></h3>
+      <p>Future-facing work on synthetic photometry, emission lines, morphology, and survey-ready mock observations built from the simulation outputs.</p>
+      <p class="lead">Can point to planned work, in-progress notes, or a future placeholder page.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in" id="people">
+  <h2>People</h2>
+  <div class="people">
+    <div>Principal investigator</div><div>Lead scientist</div>
+    <div>Postdocs</div><div>Analysis</div>
+    <div>Students</div><div>Projects</div>
+    <div>Developers</div><div>Code and infrastructure</div>
+  </div>
+</section>
+
+<section class="section fade-in" id="visual">
+  <h2>Visualization</h2>
+  <p class="text">The SPICE simulations generate a wide range of visual material, from large-scale ionisation structure to galaxy-scale zooms and time-evolution sequences. This section can work both as a gallery and as a flexible home for static images, embedded videos, and linked media.</p>
+  <div class="visual-grid">
+    <div class="visual-large media-block"></div>
+    <div class="visual-small">
+      <div class="media-block"></div>
+      <div class="media-block">
+        <video controls poster="images/movie-poster.png">
+          <source src="movies/reionisation-evolution.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:2.2rem; max-width:760px; color:var(--muted);">
+    <p><strong style="color:var(--ink);">Options for adding media:</strong></p>
+    <p><strong>PNG / JPG:</strong> standard image files for maps, slices, or publication figures.</p>
+    <p><strong>MP4:</strong> use the <code>&lt;video&gt;</code> element for local movies exported from the simulations.</p>
+    <p><strong>YouTube / Vimeo:</strong> embed externally hosted movies using an <code>&lt;iframe&gt;</code> when files are too large for the repository.</p>
+    <p><strong>Linked media pages:</strong> each image or movie can link out to a dedicated gallery page, project page, paper page, or downloadable full-resolution asset.</p>
+  </div>
+  <div class="projects" style="margin-top:2.5rem;">
+    <div class="project"><h3>Large-scale ionisation maps</h3><p>Wide-field renderings of ionised regions across cosmological volumes, showing how reionisation topology traces galaxy clustering and large-scale density structure.</p></div>
+    <div class="project"><h3>Galaxy-centred zooms</h3><p>High-resolution views of individual halos and their surrounding gas, useful for illustrating feedback, escape channels, and the local structure of radiation-driven evolution.</p></div>
+    <div class="project"><h3>Density and temperature slices</h3><p>Cross-sectional views through the simulation volume highlighting the multiphase interstellar and intergalactic medium, thermal structure, and evolving fronts.</p></div>
+    <div class="project"><h3>Time-evolution movies</h3><p>Animated sequences following galaxies, ionisation fronts, and the large-scale growth of reionised regions across redshift.</p></div>
+    <div class="project"><h3>Comparative visualisations</h3><p>Side-by-side images comparing different runs, feedback prescriptions, or resolutions, helping to show how physical assumptions alter the resulting structures.</p></div>
+    <div class="project"><h3>Figure-ready scientific outputs</h3><p>Publication-style panels, annotated composites, and presentation-ready visuals for papers, talks, and outreach material.</p></div>
+  </div>
+</section>
+
+<section class="section fade-in" id="data">
+  <h2>Data</h2>
+  <p class="text">The SPICE data products can be organised into simulation outputs, reduced catalogs, visual products, and future public-facing releases. This section is intended to explain not only what exists, but also how people can access it, what format it takes, and how it should be cited.</p>
+  <table class="data-table">
+    <tr><th>Product</th><th>Description</th><th>Access</th><th>Link</th></tr>
+    <tr><td>Snapshots</td><td>Full simulation outputs including gas, radiation, stars, and derived fields at selected redshifts.</td><td>On request</td><td><a href="#" class="data-link">Request access</a></td></tr>
+    <tr><td>Halo &amp; galaxy catalogs</td><td>Reduced catalogs with object properties such as masses, luminosities, star-formation rates, and structural quantities.</td><td>Planned / selective release</td><td><a href="#" class="data-link">Coming soon</a></td></tr>
+    <tr><td>Ionisation maps</td><td>Large-scale field products for visualisation, topology studies, and comparison to reionisation observables.</td><td>Internal / collaboration</td><td><a href="#" class="data-link">Collaboration only</a></td></tr>
+    <tr><td>Figures &amp; movies</td><td>Rendered maps, image sequences, and presentation-ready visual outputs from the simulations.</td><td>Public</td><td><a href="#visual" class="data-link">Browse</a></td></tr>
+  </table>
+  <div style="margin-top:2.2rem; max-width:700px; color:var(--muted);">
+    <p>You can also use this area to add a short access policy, release notes, or practical download instructions.</p>
+    <p>If you want this section to become richer later, it could easily grow into a dedicated data page with download cards, version history, file-format notes, and example analysis notebooks.</p>
+  </div>
+</section>
+
+<section class="section fade-in" id="contact">
+  <h2>Contact</h2>
+  <div class="contact">
+    <div><strong>Email</strong>: <a href="mailto:you@institute.edu">you@institute.edu</a></div>
+    <div><strong>Data requests</strong>: <a href="mailto:data@institute.edu">data@institute.edu</a></div>
+    <div><strong>Collaboration</strong>: <a href="mailto:collab@institute.edu">collab@institute.edu</a></div>
+  </div>
+  <p style="margin-top:1rem; color:var(--muted); max-width:520px;">For enquiries about the simulations, data access, or collaboration opportunities, please email directly using the addresses above.</p>
+</section>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".fade-in");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){ entry.target.classList.add("visible"); }
+    });
+  }, { threshold: 0.15 });
+  items.forEach(item => observer.observe(item));
+});
+</script>
+</body>
+</html>
