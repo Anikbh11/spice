@@ -1,1 +1,113 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPICE — Galaxy statistics during reionisation</title>
+<style>
+:root{--bg:#f5f1ea;--ink:#1d1a17;--muted:#746d64;--accent:#9a8471;--line:rgba(29,26,23,0.08);--radius:14px}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}
+h1,h2,h3{font-family:Georgia,serif;font-weight:500;letter-spacing:-0.02em;margin-top:0}
+a{color:inherit;text-decoration:none}
+.container{max-width:1100px;margin:auto;padding:2rem}
+nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:4rem;font-size:.95rem}
+nav .left a,nav .right a{color:var(--muted);margin-left:1.2rem} nav .left a:first-child{margin-left:0} nav a:hover{color:var(--ink)}
+.kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem}
+.status{display:inline-block;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+.hero{margin-bottom:6rem}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:end}
+.hero h1{font-size:4rem;line-height:1.02;max-width:11ch;margin-bottom:1rem}
+.hero-intro,.text,.caption{color:var(--muted)} .hero-intro{max-width:58ch;font-size:1.05rem}
+.hero-meta{padding-top:1rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem} .hero-meta div{margin-bottom:.6rem}
+.hero-media{margin-top:2.5rem;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#ddd,#eee);min-height:420px}
+.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover;display:block}
+.section{margin-bottom:6rem} .section h2{font-size:2.2rem;margin-bottom:1rem} .text{max-width:700px}
+.media-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:1rem;margin-top:2rem}
+.media-stack{display:grid;gap:1rem}
+.media-frame{overflow:hidden;border-radius:var(--radius);background:linear-gradient(135deg,#ddd,#eee);min-height:240px}
+.media-frame.tall{min-height:500px}
+.media-frame img,.media-frame video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
+.media-frame:hover img,.media-frame:hover video{transform:scale(1.03)}
+.caption{font-size:.84rem;margin-top:.45rem}
+.result-list{margin-top:1.5rem}
+.result-item{padding:1rem 0;border-bottom:1px solid var(--line)}
+.result-item strong{display:block;margin-bottom:.25rem;font-family:Georgia,serif;font-size:1.15rem}
+.links{display:grid;gap:.8rem;max-width:500px;margin-top:1.5rem}
+.links a{color:var(--muted);border-bottom:1px solid transparent;width:fit-content;transition:.2s ease}
+.links a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .9s ease, transform .9s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+@media(max-width:900px){.hero-grid,.media-grid{grid-template-columns:1fr} .hero h1{font-size:2.9rem;max-width:none} .hero-media{min-height:300px} .media-frame.tall{min-height:280px}}
+</style>
+</head>
+<body>
+<div class="container">
+<nav>
+  <div class="left"><a href="index.html">← SPICE</a></div>
+  <div class="right"><a href="#overview">Overview</a><a href="#visuals">Visuals</a><a href="#results">Results</a><a href="#links">Links</a></div>
+</nav>
+<section class="hero fade-in">
+  <div class="hero-grid">
+    <div>
+      <div class="kicker">SPICE / Project page</div>
+      <div class="status">Published project</div>
+      <h1>Galaxy statistics during reionisation</h1>
+      <p class="hero-intro">This project gathers the main galaxy population statistics produced by SPICE, linking internal galaxy growth to observable quantities such as UV luminosities, stellar masses, and star-formation histories.</p>
+    </div>
+    <div class="hero-meta">
+      <div><strong>Theme</strong> · galaxy populations and observables</div>
+      <div><strong>Scope</strong> · UVLFs, stellar mass, star-formation histories</div>
+      <div><strong>Outputs</strong> · figures, catalogs, scaling relations</div>
+    </div>
+  </div>
+  <div class="hero-media"><img src="images/galaxy-statistics-hero.png" alt="Galaxy statistics during reionisation visual"></div>
+</section>
+<section class="section fade-in" id="overview">
+  <div class="kicker">Overview</div>
+  <h2>Scientific context</h2>
+  <p class="text">This project gathers the main galaxy population statistics produced by SPICE, linking internal galaxy growth to observable quantities such as UV luminosities, stellar masses, and star-formation histories.</p>
+  <p class="text">The goal is to understand what kinds of galaxies dominate the ionising budget and how their observable properties evolve during the reionisation era.</p>
+</section>
+<section class="section fade-in" id="visuals">
+  <div class="kicker">Visual archive</div>
+  <h2>Figures and media</h2>
+  <div class="media-grid">
+    <div>
+      <div class="media-frame tall"><img src="images/galaxy-statistics-hero.png" alt="Galaxy statistics during reionisation visual"></div>
+      <div class="caption">Representative visual for galaxy population trends.</div>
+    </div>
+    <div class="media-stack">
+      <div>
+        <div class="media-frame"><img src="images/galaxy-zoom.png" alt="Galaxy statistics during reionisation visual"></div>
+        <div class="caption">Galaxy-centred rendering.</div>
+      </div>
+      <div>
+        <div class="media-frame"><video controls poster="images/project-movie-poster.png"><source src="movies/reionisation-evolution.mp4" type="video/mp4"></video></div>
+        <div class="caption">Example movie slot for time evolution or survey-style outputs.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section fade-in" id="results">
+  <div class="kicker">Results</div>
+  <h2>Key findings</h2>
+  <div class="result-list"><div class="result-item"><strong>UV luminosity functions</strong><span class="text">Evolution with redshift and comparison to observed samples.</span></div><div class="result-item"><strong>Stellar mass growth</strong><span class="text">Assembly histories across halo mass and environment.</span></div><div class="result-item"><strong>Star-formation histories</strong><span class="text">Bursty versus smooth growth and the implications for observability.</span></div><div class="result-item"><strong>Galaxy–halo connection</strong><span class="text">Relations between luminosity, mass, and ionising output.</span></div></div>
+</section>
+<section class="section fade-in" id="links">
+  <div class="kicker">Resources</div>
+  <h2>Project links</h2>
+  <div class="links"><a href="#">Paper</a><a href="#">Associated figures</a><a href="#">Catalog release</a></div>
+</section>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".fade-in");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add("visible"); });
+  }, { threshold: 0.15 });
+  items.forEach(item => observer.observe(item));
+});
+</script>
+</body>
+</html>
