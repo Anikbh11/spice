@@ -106,6 +106,98 @@ p.big {line-height: 2.0;}
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+  
+/* ── Contact form ── */
+.contact-form {
+  margin-top: 2rem;
+  max-width: 560px;
+}
+.contact-form .form-group {
+  margin-bottom: 1.4rem;
+}
+.contact-form label {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: .88rem;
+  color: var(--muted);
+  margin-bottom: .4rem;
+  letter-spacing: .01em;
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,0.18);
+  padding: .55rem 0;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: .95rem;
+  color: var(--ink);
+  outline: none;
+  border-radius: 0;
+  transition: border-color .2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-bottom-color: var(--accent);
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #bbb;
+}
+.contact-form textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.6;
+}
+  .contact-form select {
+  cursor: pointer;
+  color: var(--ink);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a7368' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 2px center;
+  padding-right: 1.5rem;
+}
+.contact-form select option[value=""] {
+  color: #bbb;
+}
+.contact-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.contact-form button[type="submit"] {
+  margin-top: .6rem;
+  background: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: Georgia, serif;
+  font-size: .92rem;
+  letter-spacing: .04em;
+  padding: .65rem 1.8rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background .22s ease, color .22s ease;
+}
+.contact-form button[type="submit"]:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+.form-success {
+  display: none;
+  margin-top: 1.2rem;
+  color: var(--muted);
+  font-family: Georgia, serif;
+  font-size: .95rem;
+  font-style: italic;
+}
+@media(max-width:600px){
+  .contact-form .form-row { grid-template-columns: 1fr; gap: 0; }
+}
 
 </style>
 </head>
@@ -170,12 +262,62 @@ p.big {line-height: 2.0;}
    </p>
 </section>
 
-  <section class="section fade-in" id="contact">
+<section class="section fade-in" id="contact">
   <h2>Contact</h2>
   <div class="contact">
     <div><strong>Email</strong>: <a href="mailto:you@mpa-garching.mpg.de">you @ mpa-garching.mpg.de</a></div>
   </div>
   <p style="margin-top:1rem; color:var(--muted); max-width:520px;">For enquiries please email directly using the address above.</p>
+
+    <!-- Contact form -->
+  <form
+    class="contact-form"
+    action="https://formsubmit.co/you@institute.edu"
+    method="POST"
+    id="contact-form"
+  >
+    <!-- FormSubmit config: disable captcha redirect, set subject -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="SPICE website enquiry">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="cf-name">Name</label>
+        <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <label for="cf-email">Email</label>
+        <input type="email" id="cf-email" name="email" placeholder="your@email.com" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="cf-affiliation">Affiliation</label>
+      <input type="text" id="cf-affiliation" name="affiliation" placeholder="Institution or organisation">
+    </div>
+
+    <div class="form-group">
+      <label for="cf-topic">Topic</label>
+      <select id="cf-topic" name="topic" required>
+        <option value="" disabled selected>Select a topic</option>
+        <option value="general">General enquiry</option>
+        <option value="data">Data access request</option>
+        <option value="collaboration">Collaboration proposal</option>
+        <option value="media">Press / media</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+        <div class="form-group">
+      <label for="cf-message">Message</label>
+      <textarea id="cf-message" name="message" placeholder="Your message…" required></textarea>
+    </div>
+
+    <button type="submit">Send message</button>
+    <p class="form-success" id="form-success">Thank you — your message has been sent.</p>
+  </form>
+  
 </section>
 
 <section class="section fade-in" id="projects">
