@@ -68,32 +68,6 @@ linear-gradient(135deg,#ddd,#eee)}
 p.small {line-height: 1.2;}
 p.big {line-height: 2.0;}
   
-\/* ── Contact Form ── */
-  form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-width: 500px;
-}
-
-input, textarea, button {
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-button {
-  background-color: #0077cc;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #005fa3;
-}
-  
 /* ── Scroll-to-top button ── */
 #scroll-top {
   position: fixed;
@@ -196,31 +170,14 @@ button:hover {
    </p>
 </section>
 
-<section class="section fade-in" id="contact">
-  <h2>Contact</h2>
-    <p style="margin-top:1rem; color:var(--muted);>For enquiries please email directly:</p>
-    <div><strong>Email</strong>: <a href="mailto:you@mpa-garching.mpg.de">you@mpa-garching.mpg.de</a></div>
-</section>
-
-  <form action="https://formsubmit.co/your@email.com" method="POST">
-  <label for="name">Name</label>
-  <input type="text" id="name" name="name" required>
-
-  <label for="email">Email</label>
-  <input type="email" id="email" name="email" required>
-
-  <label for="message">Message</label>
-  <textarea id="message" name="message" rows="5" required></textarea>
-
-  <button type="submit">Send</button>
-</form>
-
-<section class="section fade-in" id="contact">
+  <section class="section fade-in" id="contact">
   <h2>Contact</h2>
   <div class="contact">
-    <p style="margin-top:1rem; color:var(--muted);>For enquiries please email directly:</p>
-    <div><strong>Email</strong>: <a href="mailto:you@mpa-garching.mpg.de">you@mpa-garching.mpg.de</a></div>
+    <div><strong>Email</strong>: <a href="mailto:you@institute.edu">you@institute.edu</a></div>
+    <div><strong>Data requests</strong>: <a href="mailto:data@institute.edu">data@institute.edu</a></div>
+    <div><strong>Collaboration</strong>: <a href="mailto:collab@institute.edu">collab@institute.edu</a></div>
   </div>
+  <p style="margin-top:1rem; color:var(--muted); max-width:520px;">For enquiries about the simulations, data access, or collaboration opportunities, please email directly using the addresses above.</p>
 </section>
 
 <section class="section fade-in" id="projects">
