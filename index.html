@@ -65,15 +65,57 @@ linear-gradient(135deg,#ddd,#eee)}
   .visual-grid{grid-template-columns:1fr}
   .people{grid-template-columns:1fr}
 }
-  p.small {
-  line-height: 1.2;
+p.small {line-height: 1.2;}
+p.big {line-height: 2.0;}
+
+/* ── Scroll-to-top button ── */
+#scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--bg);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity .3s ease, transform .3s ease, background .2s ease;
+  z-index: 999;
 }
-p.big {
-  line-height: 2.0;
+#scroll-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
+#scroll-top:hover {
+  background: var(--accent);
+}
+#scroll-top svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 </style>
 </head>
 <body>
+
+<!-- Scroll-to-top button -->
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+  
 <div class="container">
 <nav>
   <div class="logo">SPICE</div>
@@ -281,6 +323,8 @@ p.big {
 </div>
 
 <script>
+  
+// Fade-in on scroll
 document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".fade-in");
   const observer = new IntersectionObserver((entries) => {
@@ -290,6 +334,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.15 });
   items.forEach(item => observer.observe(item));
 });
+
+// Scroll-to-top button
+const scrollBtn = document.getElementById("scroll-top");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 400) {
+    scrollBtn.classList.add("visible");
+  } else {
+    scrollBtn.classList.remove("visible");
+  }
+});
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+  
 </script>
 </body>
 </html>
