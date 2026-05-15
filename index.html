@@ -67,7 +67,33 @@ linear-gradient(135deg,#ddd,#eee)}
 }
 p.small {line-height: 1.2;}
 p.big {line-height: 2.0;}
+  
+\/* ── Contact Form ── */
+  form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 500px;
+}
 
+input, textarea, button {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+  
 /* ── Scroll-to-top button ── */
 #scroll-top {
   position: fixed;
