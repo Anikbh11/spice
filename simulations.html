@@ -39,20 +39,83 @@ nav .left a,nav .right a{color:var(--muted);margin-left:1.2rem} nav .left a:firs
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity .9s ease, transform .9s ease}
 .fade-in.visible{opacity:1;transform:translateY(0)}
 @media(max-width:900px){.hero-grid,.media-grid{grid-template-columns:1fr} .hero h1{font-size:2.9rem;max-width:none} .hero-media{min-height:300px} .media-frame.tall{min-height:280px}}
+
+.styled-table {
+  width: 100%;
+  max-width: 700px;
+  margin: 2rem auto;
+  border-collapse: collapse;
+}
+.styled-table th {
+  font-family: Georgia, serif;
+  font-weight: 500;
+  font-size: .85rem;
+  color: var(--muted);
+  text-align: left;
+  padding: .8rem 1rem;
+  border-bottom: 1px solid var(--ink);
+}
+.styled-table td {
+  padding: .8rem 1rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .92rem;
+  vertical-align: top;
+}
+.styled-table tr:last-child td {
+  border-bottom: none;
+}
 </style>
 </head>
-<body>
+
+  <body>
 <div class="container">
 <nav>
   <div class="left"><a href="index.html">← SPICE HOMEPAGE</a></div>
 </nav>
-<section class="hero fade-in">
+
+  <section class="hero fade-in">
   <div class="hero-grid">
       <h1>Simulations</h1>
   </div>
   
+  <p style="max-width:100%; color:var(--muted);">
+    The SPICE simulation suite was run using the adaptive mesh refinement code RAMSES-RT in a box of length 10 cMpc/<i>h</i>. ADD INFORMATION </br>
+    The SN feedback models explored are the following:
+  </p>
   
-  
+  <table class="styled-table">
+  <thead>
+    <tr>
+      <th>Column A</th>
+      <th>Column B</th>
+      <th>Column C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Row 1, A</td>
+      <td>Row 1, B</td>
+      <td>Row 1, C</td>
+    </tr>
+    <tr>
+      <td>Row 2, A</td>
+      <td>Row 2, B</td>
+      <td>Row 2, C</td>
+    </tr>
+    <tr>
+      <td>Row 3, A</td>
+      <td>Row 3, B</td>
+      <td>Row 3, C</td>
+    </tr>
+    <tr>
+      <td>Row 4, A</td>
+      <td>Row 4, B</td>
+      <td>Row 4, C</td>
+    </tr>
+  </tbody>
+</table>
+    
 </section>
 </div>
 <script>
