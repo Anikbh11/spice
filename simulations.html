@@ -45,6 +45,9 @@ nav .left a,nav .right a{color:var(--muted);margin-left:1.2rem} nav .left a:firs
   max-width: 700px;
   margin: 2rem auto;
   border-collapse: collapse;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: var(--radius);
+  overflow: hidden;        /* keeps border-radius visible */
 }
 .styled-table th {
   font-family: Georgia, serif;
@@ -53,14 +56,23 @@ nav .left a,nav .right a{color:var(--muted);margin-left:1.2rem} nav .left a:firs
   color: var(--muted);
   text-align: left;
   padding: .8rem 1rem;
-  border-bottom: 1px solid var(--ink);
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+  border-right: 1px solid rgba(0,0,0,0.08);
+  background: rgba(0,0,0,0.03);
 }
-.styled-table td {
+.styled-table th:last-child {
+  border-right: none;
+}
+  .styled-table td {
   padding: .8rem 1rem;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  border-right: 1px solid rgba(0,0,0,0.08);
   color: var(--muted);
   font-size: .92rem;
   vertical-align: top;
+}
+.styled-table td:last-child {
+  border-right: none;
 }
 .styled-table tr:last-child td {
   border-bottom: none;
