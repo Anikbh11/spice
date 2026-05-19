@@ -3,137 +3,131 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Images&Videos</title>
+<title>Images & Videos</title>
 <style>
-:root{--bg:#f5f1ea;--ink:#1d1a17;--muted:#746d64;--accent:#9a8471;--line:rgba(29,26,23,0.08);--radius:14px}
-*{box-sizing:border-box} html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}
-h1,h2,h3{font-family:Georgia,serif;font-weight:500;letter-spacing:-0.02em;margin-top:0}
+/* ── Exact tokens from main page ── */
+:root{
+  --bg:#f4f1ea;
+  --ink:#1a1816;
+  --muted:#7a7368;
+  --accent:#8c7c69;
+  --line:rgba(0,0,0,0.08);
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.72;text-align:justify}
+h1,h2,h3,h4{font-family:Georgia,serif;font-weight:500;letter-spacing:-0.02em;margin-top:0}
 a{color:inherit;text-decoration:none}
-.container{max-width:1100px;margin:auto;padding:2rem}
-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:4rem;font-size:.95rem}
-nav .left a,nav .right a{color:var(--muted);margin-left:1.2rem} nav .left a:first-child{margin-left:0} nav a:hover{color:var(--ink)}
-.kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem}
-.status{display:inline-block;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
-.hero{margin-bottom:6rem}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:end}
-.hero h1{font-size:4rem;line-height:1.02;max-width:11ch;margin-bottom:1rem}
-.hero-intro,.text,.caption{color:var(--muted)} .hero-intro{max-width:58ch;font-size:1.05rem}
-.hero-meta{padding-top:1rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem} .hero-meta div{margin-bottom:.6rem}
-.hero-media{margin-top:2.5rem;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#ddd,#eee);min-height:420px}
-.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover;display:block}
-.section{margin-bottom:6rem} .section h2{font-size:2.2rem;margin-bottom:1rem} .text{max-width:700px}
-.media-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:1rem;margin-top:2rem}
-.media-stack{display:grid;gap:1rem}
-.media-frame{overflow:hidden;border-radius:var(--radius);background:linear-gradient(135deg,#ddd,#eee);min-height:240px}
-.media-frame.tall{min-height:500px}
-.media-frame img,.media-frame video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
-.media-frame:hover img,.media-frame:hover video{transform:scale(1.03)}
-.caption{font-size:.84rem;margin-top:.45rem}
-.result-list{margin-top:1.5rem}
-.result-item{padding:1rem 0;border-bottom:1px solid var(--line)}
-.result-item strong{display:block;margin-bottom:.25rem;font-family:Georgia,serif;font-size:1.15rem}
-.links{display:grid;gap:.8rem;max-width:500px;margin-top:1.5rem}
-.links a{color:var(--muted);border-bottom:1px solid transparent;width:fit-content;transition:.2s ease}
-.links a:hover{color:var(--accent);border-bottom-color:var(--accent)}
-.fade-in{opacity:0;transform:translateY(24px);transition:opacity .9s ease, transform .9s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
-@media(max-width:900px){.hero-grid,.media-grid{grid-template-columns:1fr} .hero h1{font-size:2.9rem;max-width:none} .hero-media{min-height:300px} .media-frame.tall{min-height:280px}}
+.container{max-width:1200px;margin:auto;padding:4rem}
 
-  /* ── Figure layout ── */
-.figure-block {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 2.5rem;
-  align-items: start;
-  margin-bottom: 3.5rem;
-  padding-bottom: 3.5rem;
-  border-bottom: 1px solid var(--line);
+/* ── Nav — identical to main page ── */
+nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:5rem}
+nav .logo{font-family:Georgia,serif;font-size:1.4rem}
+nav .links a{margin-left:1.5rem;color:var(--muted);font-size:.9rem}
+nav .links a:hover{color:var(--ink)}
+
+.section{margin-bottom:6rem}
+.section h2{font-size:2.2rem;margin-bottom:1.8rem}
+
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+/* ── Figure layout ── */
+.figure-block{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:2.5rem;
+  align-items:start;
+  margin-bottom:3.5rem;
+  padding-bottom:3.5rem;
+  border-bottom:1px solid var(--line);
 }
-.figure-block:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
+.figure-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+
+.figure-caption-col{padding-top:0.25rem}
+
+.figure-number{
+  font-family:Georgia,serif;
+  font-size:0.78rem;
+  color:var(--accent);
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  margin-bottom:0.5rem;
 }
-/* Caption side */
-.figure-caption-col {
-  padding-top: 0.25rem;
+.figure-caption-col h4{
+  font-size:1.15rem;
+  margin:0 0 0.75rem 0;
+  line-height:1.35;
+  color:var(--ink);
 }
-.figure-number {
-  font-family: Georgia, serif;
-  font-size: 0.78rem;
-  color: var(--accent);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
+.figure-caption-col p{
+  font-size:0.875rem;
+  color:var(--muted);
+  line-height:1.7;
+  margin:0;
+  text-align:left;
 }
-.figure-caption-col h4 {
-  font-size: 1.15rem;
-  margin: 0 0 0.75rem 0;
-  line-height: 1.35;
-  color: var(--ink);
-}
-.figure-caption-col p {
-  font-size: 0.875rem;
-  color: var(--muted);
-  line-height: 1.7;
-  margin: 0;
-  text-align: left;
-}
-  /* Image side */
-.figure-image-col {
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: linear-gradient(135deg, #dcd6cc, #e7e1d8);
-  position: relative;
+
+.figure-image-col{
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:linear-gradient(135deg,#dcd6cc,#e7e1d8);
+  position:relative;
 }
 .figure-image-col img,
-.figure-image-col video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-  /* Placeholder when no image is supplied */
-.figure-placeholder {
-  width: 100%;
-  aspect-ratio: 16/9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--accent);
-  font-family: Georgia, serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-  opacity: 0.55;
-}
+.figure-image-col video{width:100%;height:100%;object-fit:cover;display:block}
 
-/* Responsive */
+.figure-placeholder{
+  width:100%;
+  aspect-ratio:16/9;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--accent);
+  font-family:Georgia,serif;
+  font-size:0.85rem;
+  letter-spacing:0.05em;
+  opacity:0.55;
+}
+  /* ── Scroll-to-top — identical to main page ── */
+#scroll-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--bg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .3s ease,transform .3s ease,background .2s ease;z-index:999}
+#scroll-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+#scroll-top:hover{background:var(--accent)}
+#scroll-top svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+@media(max-width:900px){
+  .container{padding:2rem}
+  nav{margin-bottom:3rem}
+}
 @media(max-width:760px){
-  .figure-block {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
-  }
-  .figure-caption-col {
-    order: 2;
-  }
-  .figure-image-col {
-    order: 1;
-  }
+  .figure-block{grid-template-columns:1fr;gap:1.2rem}
+  .figure-caption-col{order:2}
+  .figure-image-col{order:1}
 }
 </style>
 </head>
 <body>
+
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
 <div class="container">
-<nav>
-  <div class="left"><a href="index.html">← SPICE HOMEPAGE</a></div>
-</nav>
-<section class="hero fade-in">
-  <div class="hero-grid">
-      <h1>Images & Videos</h1>
-  </div>
-  
-      <!-- Figure 1 -->
+  <nav>
+    <div class="logo"><a href="index.html">SPICE</a></div>
+    <div class="links">
+      <a href="simulations.html">Simulations</a>
+      <a href="publications.html">Publications</a>
+      <a href="images.html">Images&Videos</a>
+      <a href="index.html#people">People</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section class="section fade-in">
+    <h2>Images & Videos</h2>
+
+    <!-- Figure 1 -->
     <div class="figure-block">
       <div class="figure-caption-col">
         <div class="figure-number">Figure 1</div>
@@ -143,13 +137,12 @@ nav .left a,nav .right a{color:var(--muted);margin-left:1.2rem} nav .left a:firs
         </p>
       </div>
       <div class="figure-image-col">
-        <!-- Replace src with your actual image path -->
         <!-- <img src="figures/reionisation_history.png" alt="Reionisation History"> -->
         <div class="figure-placeholder">[ reionisation_history.png ]</div>
       </div>
     </div>
 
-    <!-- Figure 2 -->
+        <!-- Figure 2 -->
     <div class="figure-block">
       <div class="figure-caption-col">
         <div class="figure-number">Figure 2</div>
@@ -163,9 +156,10 @@ nav .left a,nav .right a{color:var(--muted);margin-left:1.2rem} nav .left a:firs
         <div class="figure-placeholder">[ uvlf_z7.png ]</div>
       </div>
     </div>
-  
-</section>
+
+  </section>
 </div>
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".fade-in");
@@ -173,6 +167,14 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add("visible"); });
   }, { threshold: 0.15 });
   items.forEach(item => observer.observe(item));
+});
+
+const scrollBtn = document.getElementById("scroll-top");
+window.addEventListener("scroll", () => {
+  scrollBtn.classList.toggle("visible", window.scrollY > 400);
+});
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 </script>
 </body>
