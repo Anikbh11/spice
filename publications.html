@@ -3,108 +3,174 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Publications</title>
+<title>Publications — SPICE</title>
 <style>
-:root{--bg:#f5f1ea;--ink:#1d1a17;--muted:#746d64;--accent:#9a8471;--line:rgba(29,26,23,0.08);--radius:14px}
-*{box-sizing:border-box} html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}
-h1,h2,h3{font-family:Georgia,serif;font-weight:500;letter-spacing:-0.02em;margin-top:0}
+/* ── Exact tokens from main page ── */
+:root{
+  --bg:#f4f1ea;
+  --ink:#1a1816;
+  --muted:#7a7368;
+  --accent:#8c7c69;
+  --line:rgba(0,0,0,0.08);
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.72;text-align:justify}
+h1,h2,h3,h4{font-family:Georgia,serif;font-weight:500;letter-spacing:-0.02em;margin-top:0}
 a{color:inherit;text-decoration:none}
-.container{max-width:1100px;margin:auto;padding:2rem}
-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:4rem;font-size:.95rem}
-nav .left a,nav .right a{color:var(--muted);margin-left:1.2rem} nav .left a:first-child{margin-left:0} nav a:hover{color:var(--ink)}
-.kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem}
-.status{display:inline-block;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
-.hero{margin-bottom:6rem}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:end}
-.hero h1{font-size:4rem;line-height:1.02;max-width:11ch;margin-bottom:1rem}
-.hero-intro,.text,.caption{color:var(--muted)} .hero-intro{max-width:58ch;font-size:1.05rem}
-.hero-meta{padding-top:1rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem} .hero-meta div{margin-bottom:.6rem}
-.hero-media{margin-top:2.5rem;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#ddd,#eee);min-height:420px}
-.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover;display:block}
-.section{margin-bottom:6rem} .section h2{font-size:2.2rem;margin-bottom:1rem} .text{max-width:700px}
-.media-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:1rem;margin-top:2rem}
-.media-stack{display:grid;gap:1rem}
-.media-frame{overflow:hidden;border-radius:var(--radius);background:linear-gradient(135deg,#ddd,#eee);min-height:240px}
-.media-frame.tall{min-height:500px}
-.media-frame img,.media-frame video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
-.media-frame:hover img,.media-frame:hover video{transform:scale(1.03)}
-.caption{font-size:.84rem;margin-top:.45rem}
-.result-list{margin-top:1.5rem}
-.result-item{padding:1rem 0;border-bottom:1px solid var(--line)}
-.result-item strong{display:block;margin-bottom:.25rem;font-family:Georgia,serif;font-size:1.15rem}
-.links{display:grid;gap:.8rem;max-width:500px;margin-top:1.5rem}
-.links a{color:var(--muted);border-bottom:1px solid transparent;width:fit-content;transition:.2s ease}
-.links a:hover{color:var(--accent);border-bottom-color:var(--accent)}
-.fade-in{opacity:0;transform:translateY(24px);transition:opacity .9s ease, transform .9s ease}
+.container{max-width:1200px;margin:auto;padding:4rem}
+
+/* ── Nav — identical to main page ── */
+nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:5rem}
+nav .logo{font-family:Georgia,serif;font-size:1.4rem}
+nav .links a{margin-left:1.5rem;color:var(--muted);font-size:.9rem}
+nav .links a:hover{color:var(--ink)}
+
+.section{margin-bottom:6rem}
+.section h2{font-size:2.2rem;margin-bottom:1.4rem}
+
+/* ── Publication list ── */
+.pub-group{margin-bottom:3.5rem}
+.pub-group h2{font-size:1.6rem;margin-bottom:1.2rem}
+
+.pub-item{
+  padding:1.1rem 0;
+  border-bottom:1px solid var(--line);
+  text-align:left;
+}
+.pub-item:last-child{border-bottom:none}
+
+.pub-item a{
+  font-family:Georgia,serif;
+  font-size:1rem;
+  color:var(--ink);
+  font-weight:500;
+  line-height:1.4;
+  border-bottom:1px solid transparent;
+  transition:.2s ease;
+}
+.pub-item a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.pub-authors{
+  margin-top:.3rem;
+  font-size:.875rem;
+  color:var(--muted);
+  line-height:1.6;
+}
+.pub-journal{
+  margin-top:.2rem;
+  font-size:.82rem;
+  color:var(--accent);
+  letter-spacing:.02em;
+}
+
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
 .fade-in.visible{opacity:1;transform:translateY(0)}
-@media(max-width:900px){.hero-grid,.media-grid{grid-template-columns:1fr} .hero h1{font-size:2.9rem;max-width:none} .hero-media{min-height:300px} .media-frame.tall{min-height:280px}}
+
+/* ── Scroll-to-top — identical to main page ── */
+#scroll-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--bg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .3s ease,transform .3s ease,background .2s ease;z-index:999}
+#scroll-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+#scroll-top:hover{background:var(--accent)}
+#scroll-top svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+@media(max-width:900px){
+  .container{padding:2rem}
+  nav{margin-bottom:3rem}
+}
 </style>
 </head>
 <body>
-<div class="container">
-<nav>
-  <div class="left"><a href="index.html">← SPICE HOMEPAGE</a></div>
-</nav>
-<section class="hero fade-in">
-  <div class="hero-grid">
-      <h1>Publications</h1>
-  </div>
-  
-  <h2>Main Publications</h2>
-    <p class=small style="color:var(--muted);">
-      <a href="https://ui.adsabs.harvard.edu/abs/2024MNRAS.531.3406B/abstract" target="_blank"><b>SPICE: the connection between cosmic reionization and stellar feedback in the first galaxies</b></a><br>
-      Aniket Bhagwat, Tiago Costa, Benedetta Ciardi, R&uumldiger Pakmor, Enrico Garaldi<br>
-      MNRAS, 2024, 531, 3406
-    </p>
-    <p class=small style="color:var(--muted);">
-      <a href="https://ui.adsabs.harvard.edu/abs/2025MNRAS.542..128B/abstract" target="_blank"><b>Ly&#593 with SPICE: interpreting Ly&#593 emission at z > 5</b></a><br>
-      Aniket Bhagwat, Lorenzo Napolitano, Laura Pentericci, Benedetta Ciardi, Tiago Costa<br>
-      MNRAS, 2025, 542, 128
-    </p>
-    <p class=small style="color:var(--muted);">
-      <a href="https://ui.adsabs.harvard.edu/abs/2026MNRAS.545f2240B/abstract" target="_blank"><b>Variability of the UV luminosity function with SPICE</b></a><br>
-      Arghyadeep Basu, Aniket Bhagwat, Tiago Costa<br>
-      MNRAS, 2026, 545, 2240
-    </p>
-    <p class=small style="color:var(--muted);">
-      <a href="https://ui.adsabs.harvard.edu/abs/2026arXiv260418730C/abstract" target="_blank"><b>New constraints on stellar feedback through [O III] emission: interpreting ALMA and JWST observations with SPICE simulations</b></a><br>
-      Benedetta Casavecchia, Aniket Bhagwat, Benedetta Ciardi, Celine Peroux, Tiago Costa<br>
-      MNRAS, 2026, in press
-    </p>
-    <p class=small style="color:var(--muted);">
-      <a href="https://ui.adsabs.harvard.edu/abs/2026arXiv260418731B/abstract" target="_blank"><b>Stellar feedback SPICEs up [C II] emission in the first galaxies</b></a><br>
-      Aniket Bhagwat, Tiago Costa, Benedetta Ciardi, Fabrizio Arrigoni Battaia<br>
-      MNRAS, 2026, submitted
-    </p>
 
-    <h2>Other Publications using SPICE</h2>
-    <p class=small style="color:var(--muted);">
-      <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...989..147G/abstract" target="_blank"><b>Metallicity Gradients in Modern Cosmological Simulations. I. Tension between Smooth Stellar Feedback Models and Observations</b></a><br>
-      Alex M. Garcia et al.; ApJ, 2025, 989, 147
-    </p>
-    <p class=small style="color:var(--muted);">
-      <a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...708A.265D/abstract" target="_blank"><b>Uncovering the absorbed atomic Universe with the [OI]63 &#956m line</b></a><br>
-      Carlos De Breuck et al.; A&A, 2026, 708, 265
-    </p>
-    <p class=small style="color:var(--muted);">
-      <a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...708A.102N/abstract" target="_blank"><b>Ly&#593 visibility from z = 4.5 to 11 in the UDS field: Evidence for a high neutral hydrogen fraction and small ionized bubbles at z ∼ 7</b></a><br>
-      Lorenzo Napolitano et al.; A&A, 2026, 708, 102
-    </p>
-    <p class=small style="color:var(--muted);">
-      <a href="https://ui.adsabs.harvard.edu/abs/2026arXiv260306409T/abstract" target="_blank"><b>The Collective Voice of Ly&#593 Emitters: Insights from JWST Stacked Spectroscopy</b></a><br>
-      Roberta Tripodi et al.; A&A, 2026, submitted
-    </p>
-    <p class=small style="color:var(--muted);">
-      <a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...707A.352G/abstract" target="_blank"><b>Breaking through the cosmic fog: JWST/NIRSpec constraints on ionizing photon escape in reionization-era galaxies</b></a><br>
-      Emma Giovinazzo et al.; A&A, 2026, 707, 352
-    </p>
-    <p class=small style="color:var(--muted);">
-      <a href="https://ui.adsabs.harvard.edu/abs/2026ApJ..1001..188G/abstract" target="_blank"><b>Metallicity Gradients in Modern Cosmological Simulations. II. The Role of Bursty versus Smooth Feedback at High Redshift</b></a><br>
-      Alex M. Garcia et al.; ApJ, 2026, 1001, 188
-    </p>
-  
-</section>
+  <button id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<div class="container">
+  <nav>
+    <div class="left"><a href="index.html">← SPICE HOMEPAGE</a></div>
+  </nav>
+
+  <section class="section fade-in">
+    <h2>Publications</h2>
+
+    <!-- Main publications -->
+    <div class="pub-group">
+      <h2>Main Publications</h2>
+
+      <div class="pub-item">
+        <a href="https://ui.adsabs.harvard.edu/abs/2024MNRAS.531.3406B/abstract" target="_blank">SPICE: the connection between cosmic reionization and stellar feedback in the first galaxies</a>
+        <div class="pub-authors">Aniket Bhagwat, Tiago Costa, Benedetta Ciardi, R&uuml;diger Pakmor, Enrico Garaldi</div>
+        <div class="pub-journal">MNRAS, 2024, 531, 3406</div>
+      </div>
+
+      <div class="pub-item">
+        <a href="https://ui.adsabs.harvard.edu/abs/2025MNRAS.542..128B/abstract" target="_blank">Ly&alpha; with SPICE: interpreting Ly&alpha; emission at z &gt; 5</a>
+        <div class="pub-authors">Aniket Bhagwat, Lorenzo Napolitano, Laura Pentericci, Benedetta Ciardi, Tiago Costa</div>
+        <div class="pub-journal">MNRAS, 2025, 542, 128</div>
+      </div>
+
+      <div class="pub-item">
+        <a href="https://ui.adsabs.harvard.edu/abs/2026MNRAS.545f2240B/abstract" target="_blank">Variability of the UV luminosity function with SPICE</a>
+        <div class="pub-authors">Arghyadeep Basu, Aniket Bhagwat, Tiago Costa</div>
+        <div class="pub-journal">MNRAS, 2026, 545, 2240</div>
+      </div>
+
+      <div class="pub-item">
+        <a href="https://ui.adsabs.harvard.edu/abs/2026arXiv260418730C/abstract" target="_blank">New constraints on stellar feedback through [O III] emission: interpreting ALMA and JWST observations with SPICE simulations</a>
+        <div class="pub-authors">Benedetta Casavecchia, Aniket Bhagwat, Benedetta Ciardi, Celine Peroux, Tiago Costa</div>
+        <div class="pub-journal">MNRAS, 2026, in press</div>
+      </div>
+
+      <div class="pub-item">
+        <a href="https://ui.adsabs.harvard.edu/abs/2026arXiv260418731B/abstract" target="_blank">Stellar feedback SPICEs up [C II] emission in the first galaxies</a>
+        <div class="pub-authors">Aniket Bhagwat, Tiago Costa, Benedetta Ciardi, Fabrizio Arrigoni Battaia</div>
+        <div class="pub-journal">MNRAS, 2026, submitted</div>
+      </div>
+    </div>
+
+        <!-- Other publications -->
+    <div class="pub-group">
+      <h2>Other Publications using SPICE</h2>
+
+      <div class="pub-item">
+        <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...989..147G/abstract" target="_blank">Metallicity Gradients in Modern Cosmological Simulations. I. Tension between Smooth Stellar Feedback Models and Observations</a>
+        <div class="pub-authors">Alex M. Garcia et al.</div>
+        <div class="pub-journal">ApJ, 2025, 989, 147</div>
+      </div>
+
+      <div class="pub-item">
+        <a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...708A.265D/abstract" target="_blank">Uncovering the absorbed atomic Universe with the [OI]63 &micro;m line</a>
+        <div class="pub-authors">Carlos De Breuck et al.</div>
+        <div class="pub-journal">A&amp;A, 2026, 708, 265</div>
+      </div>
+
+      <div class="pub-item">
+        <a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...708A.102N/abstract" target="_blank">Ly&alpha; visibility from z = 4.5 to 11 in the UDS field: Evidence for a high neutral hydrogen fraction and small ionized bubbles at z &sim; 7</a>
+        <div class="pub-authors">Lorenzo Napolitano et al.</div>
+        <div class="pub-journal">A&amp;A, 2026, 708, 102</div>
+      </div>
+
+      <div class="pub-item">
+        <a href="https://ui.adsabs.harvard.edu/abs/2026arXiv260306409T/abstract" target="_blank">The Collective Voice of Ly&alpha; Emitters: Insights from JWST Stacked Spectroscopy</a>
+        <div class="pub-authors">Roberta Tripodi et al.</div>
+        <div class="pub-journal">A&amp;A, 2026, submitted</div>
+      </div>
+
+      <div class="pub-item">
+        <a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...707A.352G/abstract" target="_blank">Breaking through the cosmic fog: JWST/NIRSpec constraints on ionizing photon escape in reionization-era galaxies</a>
+        <div class="pub-authors">Emma Giovinazzo et al.</div>
+        <div class="pub-journal">A&amp;A, 2026, 707, 352</div>
+      </div>
+
+      <div class="pub-item">
+        <a href="https://ui.adsabs.harvard.edu/abs/2026ApJ..1001..188G/abstract" target="_blank">Metallicity Gradients in Modern Cosmological Simulations. II. The Role of Bursty versus Smooth Feedback at High Redshift</a>
+        <div class="pub-authors">Alex M. Garcia et al.</div>
+        <div class="pub-journal">ApJ, 2026, 1001, 188</div>
+      </div>
+    </div>
+
+  </section>
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -113,6 +179,14 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add("visible"); });
   }, { threshold: 0.15 });
   items.forEach(item => observer.observe(item));
+});
+
+const scrollBtn = document.getElementById("scroll-top");
+window.addEventListener("scroll", () => {
+  scrollBtn.classList.toggle("visible", window.scrollY > 400);
+});
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 </script>
 </body>
