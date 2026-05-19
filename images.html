@@ -39,6 +39,88 @@ nav .left a,nav .right a{color:var(--muted);margin-left:1.2rem} nav .left a:firs
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity .9s ease, transform .9s ease}
 .fade-in.visible{opacity:1;transform:translateY(0)}
 @media(max-width:900px){.hero-grid,.media-grid{grid-template-columns:1fr} .hero h1{font-size:2.9rem;max-width:none} .hero-media{min-height:300px} .media-frame.tall{min-height:280px}}
+
+  /* ── Figure layout ── */
+.figure-block {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin-bottom: 3.5rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid var(--line);
+}
+.figure-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+/* Caption side */
+.figure-caption-col {
+  padding-top: 0.25rem;
+}
+.figure-number {
+  font-family: Georgia, serif;
+  font-size: 0.78rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.figure-caption-col h4 {
+  font-size: 1.15rem;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.35;
+  color: var(--ink);
+}
+.figure-caption-col p {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+  text-align: left;
+}
+  /* Image side */
+.figure-image-col {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: linear-gradient(135deg, #dcd6cc, #e7e1d8);
+  position: relative;
+}
+.figure-image-col img,
+.figure-image-col video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+  /* Placeholder when no image is supplied */
+.figure-placeholder {
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-family: Georgia, serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  opacity: 0.55;
+}
+
+/* Responsive */
+@media(max-width:760px){
+  .figure-block {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .figure-caption-col {
+    order: 2;
+  }
+  .figure-image-col {
+    order: 1;
+  }
+}
 </style>
 </head>
 <body>
@@ -51,7 +133,36 @@ nav .left a,nav .right a{color:var(--muted);margin-left:1.2rem} nav .left a:firs
       <h1>Images & Videos</h1>
   </div>
   
-  
+      <!-- Figure 1 -->
+    <div class="figure-block">
+      <div class="figure-caption-col">
+        <div class="figure-number">Figure 1</div>
+        <h4>Reionisation History</h4>
+        <p>
+          Evolution of the volume-averaged neutral hydrogen fraction as a function of redshift across the SPICE simulation suite. Each line represents a distinct stellar feedback model. The shaded band indicates observational constraints compiled from Lyman-alpha forest and quasar absorption measurements.
+        </p>
+      </div>
+      <div class="figure-image-col">
+        <!-- Replace src with your actual image path -->
+        <!-- <img src="figures/reionisation_history.png" alt="Reionisation History"> -->
+        <div class="figure-placeholder">[ reionisation_history.png ]</div>
+      </div>
+    </div>
+
+    <!-- Figure 2 -->
+    <div class="figure-block">
+      <div class="figure-caption-col">
+        <div class="figure-number">Figure 2</div>
+        <h4>UV Luminosity Function at z = 7</h4>
+        <p>
+          Rest-frame UV luminosity functions predicted by the SPICE runs at redshift z&nbsp;=&nbsp;7, compared to JWST/NIRCam photometric samples. Models with stronger supernova feedback (dashed lines) suppress the faint-end slope relative to the fiducial run.
+        </p>
+      </div>
+      <div class="figure-image-col">
+        <!-- <img src="figures/uvlf_z7.png" alt="UV Luminosity Function"> -->
+        <div class="figure-placeholder">[ uvlf_z7.png ]</div>
+      </div>
+    </div>
   
 </section>
 </div>
