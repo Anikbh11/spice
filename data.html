@@ -31,83 +31,57 @@
     <header class="page-hero shell reveal">
       <div class="page-hero-grid">
         <div class="paper-hero-copy">
-          <p class="eyebrow">Data releases · In preparation</p>
+          <p class="eyebrow">Data availability</p>
           <h1>SPICE data</h1>
-          <p>Paper-linked catalogues, derived measurements, and selected synthetic-observation products will be made public here as they are documented and approved for release.</p>
-          <div class="paper-tags" aria-label="Release principles"><span>Versioned</span><span>Citable</span><span>Documented</span><span>Open formats</span></div>
+          <p>No SPICE datasets are public yet. We are preparing selected catalogues and measurements from the five studies listed below. Download links will be added after the files and documentation have been checked.</p>
         </div>
-      </div>
-      <div class="paper-meta-strip" aria-label="Data portal status">
-        <div><strong>Current status</strong><span>Release preparation</span></div>
-        <div><strong>Planned collections</strong><span>Five paper-linked entries</span></div>
-        <div><strong>Identifiers</strong><span>DOIs when deposited</span></div>
-        <div><strong>Access</strong><span>No public files yet</span></div>
       </div>
     </header>
 
-    <section class="content-section shell" aria-labelledby="data-status-title">
+    <section class="content-section shell" aria-labelledby="release-register-title">
       <div class="content-grid reveal">
-        <aside class="content-label"><p class="kicker">01 · Status</p><p>A release index before the files arrive.</p></aside>
+        <aside class="content-label"><p class="kicker">01 · Planned datasets</p><p>Measurements from five studies.</p></aside>
         <div>
-          <div class="prose">
-            <h2 id="data-status-title">Public releases are planned</h2>
-            <p class="lead">This page reserves a stable home for SPICE data without implying that unreleased products are already available.</p>
-            <p>Each release will be connected to the project page and publication that define the analysis. Download buttons will appear only after the files, metadata, documentation, licence, and preferred citation have been checked by the team.</p>
-          </div>
-          <div class="data-notice" role="note"><strong>Nothing is downloadable yet.</strong><span>Dates and repository links will be added only when a release is ready. Until then, every entry below remains explicitly marked as planned.</span></div>
+          <h2 id="release-register-title">Planned data products</h2>
+          <p class="data-intro">These releases will contain measurements used in the published analyses, not full simulation snapshots. Contents may change before publication.</p>
+          <ol class="release-register">
+            <li><span class="release-index">01</span><div><h3><a href="project-feedback-reionisation.html">Feedback and reionisation</a></h3><p>Global ionised-fraction histories and summary measurements comparing the three feedback runs.</p></div></li>
+            <li><span class="release-index">02</span><div><h3><a href="project-lya-emission.html">Lyα emission</a></h3><p>Mock Lyα spectra and luminosities measured across sightlines and apertures, including Lyα–UV spatial offsets.</p></div></li>
+            <li><span class="release-index">03</span><div><h3><a href="project-uvlf-variability.html">UV luminosity-function variability</a></h3><p>UV magnitudes, luminosity functions, and time-resolved star-formation measurements used to quantify feedback-driven variability.</p></div></li>
+            <li><span class="release-index">04</span><div><h3><a href="project-oiii-emission.html">[O III] emission</a></h3><p>Integrated [O III] luminosities together with galaxy sizes, morphologies, and line kinematics.</p></div></li>
+            <li><span class="release-index">05</span><div><h3><a href="project-cii-emission.html">[C II] emission</a></h3><p>Integrated [C II] luminosities, star-formation rates, emission sizes, and line-profile measurements.</p></div></li>
+          </ol>
         </div>
       </div>
     </section>
 
     <section class="content-section shell" aria-labelledby="release-principles-title">
       <div class="content-grid reveal">
-        <aside class="content-label"><p class="kicker">02 · Release standard</p><p>What a useful scientific release should contain.</p></aside>
+        <aside class="content-label"><p class="kicker">02 · Documentation</p><p>What will accompany each dataset.</p></aside>
         <div>
-          <h2 id="release-principles-title">Data with enough context to reuse</h2>
-          <div class="method-grid">
-            <article class="method-card"><span class="card-index">Cite</span><h3>Persistent record</h3><p>Each deposited collection will list its version, persistent identifier, related paper, authors, and a copyable preferred citation.</p></article>
-            <article class="method-card"><span class="card-index">Understand</span><h3>Methods and metadata</h3><p>Units, column definitions, selection criteria, feedback model, redshift, processing steps, and known limitations will travel with the files.</p></article>
-            <article class="method-card"><span class="card-index">Reuse</span><h3>Open, practical formats</h3><p>Machine-readable tables and widely supported scientific formats will be preferred, with an explicit licence and compact example workflow where useful.</p></article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section shell" aria-labelledby="release-register-title">
-      <div class="content-grid reveal">
-        <aside class="content-label"><p class="kicker">03 · Release register</p><p>Planned collections tied to the research projects.</p></aside>
-        <div>
-          <h2 id="release-register-title">Paper-linked data collections</h2>
-          <div class="table-wrap">
-            <table class="spec-table release-table">
-              <thead><tr><th>Project</th><th>Planned public products</th><th>Status</th></tr></thead>
-              <tbody>
-                <tr><td><a href="project-feedback-reionisation.html">Feedback and reionisation</a></td><td>Derived reionisation histories, feedback-model summaries, and paper-linked measurements.</td><td><span class="release-state">Planned</span></td></tr>
-                <tr><td><a href="project-lya-emission.html">Interpreting Lyα</a></td><td>Paired aperture measurements, viewing-angle information, and the metadata needed to interpret the mock observations.</td><td><span class="release-state">Planned</span></td></tr>
-                <tr><td><a href="project-uvlf-variability.html">UVLF variability</a></td><td>Derived luminosity-function variability measurements, binning information, and feedback-model summaries.</td><td><span class="release-state">Planned</span></td></tr>
-                <tr><td><a href="project-oiii-emission.html">[O III] emission</a></td><td>Line-luminosity functions and selected derived morphology, size, and kinematic measurements.</td><td><span class="release-state">Planned</span></td></tr>
-                <tr><td><a href="project-cii-emission.html">[C II] emission</a></td><td>Derived luminosity–SFR relations, size measurements, spectral diagnostics, and kinematic summaries.</td><td><span class="release-state">Planned</span></td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="source-note">The exact contents may change during release preparation. This register describes the intended scope, not a promise of specific files or dates.</p>
+          <h2 id="release-principles-title">Files, definitions, and citation</h2>
+          <dl class="data-standards">
+            <div><dt><span>01</span>Data files</dt><dd>Machine-readable tables in a format suited to the product, with units stated in the file or accompanying README.</dd></div>
+            <div><dt><span>02</span>Selection and definitions</dt><dd>Redshift, feedback model, sample cuts, apertures, sightlines, binning, and column definitions.</dd></div>
+            <div><dt><span>03</span>Citation and version</dt><dd>Dataset version, authors, licence, DOI or repository record, and the paper that defines the measurement.</dd></div>
+          </dl>
         </div>
       </div>
     </section>
 
     <section class="content-section shell" aria-labelledby="data-citation-title">
       <div class="content-grid reveal">
-        <aside class="content-label"><p class="kicker">04 · Citation</p><p>Credit both the research and the released product.</p></aside>
+        <aside class="content-label"><p class="kicker">03 · Citation</p><p>Cite the dataset and its paper.</p></aside>
         <div>
           <div class="prose">
-            <h2 id="data-citation-title">How to cite future SPICE data</h2>
-            <p class="lead">Each public collection will carry its own preferred data citation alongside the associated paper citation.</p>
-            <p>The release record will provide a copyable citation and BibTeX entry, version and DOI, creator list, licence, and direct link back to the relevant project. Until those records exist, please cite the paper used for the scientific result rather than this placeholder page.</p>
+            <h2 id="data-citation-title">How to cite released SPICE data</h2>
+            <p class="lead">Each download page will give a preferred data citation.</p>
+            <p>Please cite both the data record and the paper listed with the dataset. Until a release appears here, cite the relevant paper only.</p>
           </div>
-          <div class="resource-list project-resource-list">
-            <a class="resource-link" href="publications.html"><span>Publication catalogue</span><span aria-hidden="true">→</span></a>
-            <a class="resource-link" href="index.html#projects"><span>Research projects</span><span aria-hidden="true">→</span></a>
-          </div>
+          <nav class="data-related-links" aria-label="Related SPICE pages">
+            <a href="publications.html"><span>Publication catalogue</span><span aria-hidden="true">→</span></a>
+            <a href="index.html#projects"><span>Research projects</span><span aria-hidden="true">→</span></a>
+          </nav>
         </div>
       </div>
     </section>
