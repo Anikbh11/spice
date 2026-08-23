@@ -1,113 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SPICE — Galaxy statistics during reionisation</title>
-<style>
-:root{--bg:#f5f1ea;--ink:#1d1a17;--muted:#746d64;--accent:#9a8471;--line:rgba(29,26,23,0.08);--radius:14px}
-*{box-sizing:border-box} html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}
-h1,h2,h3{font-family:Georgia,serif;font-weight:500;letter-spacing:-0.02em;margin-top:0}
-a{color:inherit;text-decoration:none}
-.container{max-width:1100px;margin:auto;padding:2rem}
-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:4rem;font-size:.95rem}
-nav .left a,nav .right a{color:var(--muted);margin-left:1.2rem} nav .left a:first-child{margin-left:0} nav a:hover{color:var(--ink)}
-.kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem}
-.status{display:inline-block;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
-.hero{margin-bottom:6rem}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:end}
-.hero h1{font-size:4rem;line-height:1.02;max-width:11ch;margin-bottom:1rem}
-.hero-intro,.text,.caption{color:var(--muted)} .hero-intro{max-width:58ch;font-size:1.05rem}
-.hero-meta{padding-top:1rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem} .hero-meta div{margin-bottom:.6rem}
-.hero-media{margin-top:2.5rem;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#ddd,#eee);min-height:420px}
-.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover;display:block}
-.section{margin-bottom:6rem} .section h2{font-size:2.2rem;margin-bottom:1rem} .text{max-width:700px}
-.media-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:1rem;margin-top:2rem}
-.media-stack{display:grid;gap:1rem}
-.media-frame{overflow:hidden;border-radius:var(--radius);background:linear-gradient(135deg,#ddd,#eee);min-height:240px}
-.media-frame.tall{min-height:500px}
-.media-frame img,.media-frame video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
-.media-frame:hover img,.media-frame:hover video{transform:scale(1.03)}
-.caption{font-size:.84rem;margin-top:.45rem}
-.result-list{margin-top:1.5rem}
-.result-item{padding:1rem 0;border-bottom:1px solid var(--line)}
-.result-item strong{display:block;margin-bottom:.25rem;font-family:Georgia,serif;font-size:1.15rem}
-.links{display:grid;gap:.8rem;max-width:500px;margin-top:1.5rem}
-.links a{color:var(--muted);border-bottom:1px solid transparent;width:fit-content;transition:.2s ease}
-.links a:hover{color:var(--accent);border-bottom-color:var(--accent)}
-.fade-in{opacity:0;transform:translateY(24px);transition:opacity .9s ease, transform .9s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
-@media(max-width:900px){.hero-grid,.media-grid{grid-template-columns:1fr} .hero h1{font-size:2.9rem;max-width:none} .hero-media{min-height:300px} .media-frame.tall{min-height:280px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SPICE predictions for early galaxy populations, ultraviolet luminosity functions, stellar growth, and feedback-driven variability.">
+  <meta name="theme-color" content="#f3f0e9">
+  <link rel="canonical" href="https://anikbh11.github.io/spice/project-galaxy-statistics.html">
+  <title>Galaxy statistics during reionisation | SPICE</title>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
 </head>
 <body>
-<div class="container">
-<nav>
-  <div class="left"><a href="index.html">← SPICE</a></div>
-  <div class="right"><a href="#overview">Overview</a><a href="#visuals">Visuals</a><a href="#results">Results</a><a href="#links">Links</a></div>
-</nav>
-<section class="hero fade-in">
-  <div class="hero-grid">
-    <div>
-      <div class="kicker">SPICE / Project page</div>
-      <div class="status">Published project</div>
-      <h1>Galaxy statistics during reionisation</h1>
-      <p class="hero-intro">This project gathers the main galaxy population statistics produced by SPICE, linking internal galaxy growth to observable quantities such as UV luminosities, stellar masses, and star-formation histories.</p>
-    </div>
-    <div class="hero-meta">
-      <div><strong>Theme</strong> · galaxy populations and observables</div>
-      <div><strong>Scope</strong> · UVLFs, stellar mass, star-formation histories</div>
-      <div><strong>Outputs</strong> · figures, catalogs, scaling relations</div>
-    </div>
-  </div>
-  <div class="hero-media"><img src="images/galaxy-statistics-hero.png" alt="Galaxy statistics during reionisation visual"></div>
-</section>
-<section class="section fade-in" id="overview">
-  <div class="kicker">Overview</div>
-  <h2>Scientific context</h2>
-  <p class="text">This project gathers the main galaxy population statistics produced by SPICE, linking internal galaxy growth to observable quantities such as UV luminosities, stellar masses, and star-formation histories.</p>
-  <p class="text">The goal is to understand what kinds of galaxies dominate the ionising budget and how their observable properties evolve during the reionisation era.</p>
-</section>
-<section class="section fade-in" id="visuals">
-  <div class="kicker">Visual archive</div>
-  <h2>Figures and media</h2>
-  <div class="media-grid">
-    <div>
-      <div class="media-frame tall"><img src="images/galaxy-statistics-hero.png" alt="Galaxy statistics during reionisation visual"></div>
-      <div class="caption">Representative visual for galaxy population trends.</div>
-    </div>
-    <div class="media-stack">
-      <div>
-        <div class="media-frame"><img src="images/galaxy-zoom.png" alt="Galaxy statistics during reionisation visual"></div>
-        <div class="caption">Galaxy-centred rendering.</div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header"><div class="shell site-header-inner"><a class="brand" href="index.html" aria-label="SPICE homepage">SPICE <small>Simulation suite</small></a><nav class="site-nav" aria-label="Primary navigation"><a href="simulations.html">Project description</a><a href="index.html#projects" aria-current="page">Projects</a><a href="publications.html">Publications</a><a href="data.html">Data</a><a href="images.html">Media</a><a href="index.html#people">People</a><a href="contact.html">Contact</a></nav></div></header>
+
+  <main id="main">
+    <header class="page-hero shell reveal">
+      <div class="page-hero-grid">
+        <div><p class="eyebrow">Project 03 · Galaxy populations</p><h1>Galaxy statistics during reionisation</h1><p>Population-level predictions connecting stellar growth and feedback variability to ultraviolet luminosities, galaxy abundance, and the sources of reionisation.</p></div>
+        <div class="metadata"><div><strong>Status</strong><span>Research collection</span></div><div><strong>Scale</strong><span>Galaxy populations</span></div><div><strong>Focus</strong><span>UVLFs and stellar growth</span></div><div><strong>Comparison</strong><span>Feedback-model dependence</span></div></div>
       </div>
-      <div>
-        <div class="media-frame"><video controls poster="images/project-movie-poster.png"><source src="movies/reionisation-evolution.mp4" type="video/mp4"></video></div>
-        <div class="caption">Example movie slot for time evolution or survey-style outputs.</div>
+    </header>
+
+    <section class="content-section shell" aria-labelledby="question-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">01 · Question</p><p>Connecting internal physics to population statistics.</p></aside>
+        <div class="prose"><h2 id="question-title">Which galaxies populate the early Universe?</h2><p class="lead">Observed galaxy counts compress complex and variable growth histories into a population-level signal.</p><p>SPICE tracks galaxies across matched feedback simulations to study how ultraviolet luminosity functions, stellar masses, star-formation histories, and halo properties respond to the feedback model.</p><p>The comparison helps separate robust predictions from quantities that depend sensitively on the timing and energy of stellar feedback.</p></div>
       </div>
-    </div>
-  </div>
-</section>
-<section class="section fade-in" id="results">
-  <div class="kicker">Results</div>
-  <h2>Key findings</h2>
-  <div class="result-list"><div class="result-item"><strong>UV luminosity functions</strong><span class="text">Evolution with redshift and comparison to observed samples.</span></div><div class="result-item"><strong>Stellar mass growth</strong><span class="text">Assembly histories across halo mass and environment.</span></div><div class="result-item"><strong>Star-formation histories</strong><span class="text">Bursty versus smooth growth and the implications for observability.</span></div><div class="result-item"><strong>Galaxy–halo connection</strong><span class="text">Relations between luminosity, mass, and ionising output.</span></div></div>
-</section>
-<section class="section fade-in" id="links">
-  <div class="kicker">Resources</div>
-  <h2>Project links</h2>
-  <div class="links"><a href="#">Paper</a><a href="#">Associated figures</a><a href="#">Catalog release</a></div>
-</section>
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const items = document.querySelectorAll(".fade-in");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add("visible"); });
-  }, { threshold: 0.15 });
-  items.forEach(item => observer.observe(item));
-});
-</script>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="comparison-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">02 · Environment</p><p>Gas conditions around early galaxies.</p></aside>
+        <div><h2 id="comparison-title">Different feedback, different surroundings</h2><figure class="media-feature" style="margin-top:2rem"><img src="figure.jpeg" width="2772" height="1696" loading="lazy" alt="Matched comparison of gas temperature and metallicity in Bursty-SN, Smooth-SN, and Hyper-SN simulations."><figcaption>The feedback models generate different thermal and enrichment structures around early galaxies. These environmental differences accompany changes in their growth and observable populations.</figcaption></figure></div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="measurements-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">03 · Measurements</p><p>Core population diagnostics.</p></aside>
+        <div><h2 id="measurements-title">A linked set of statistics</h2><div class="finding-list" style="margin-top:2rem">
+          <article class="finding-row"><span>01</span><div><h3>Ultraviolet luminosity functions</h3><p>Galaxy abundance as a function of ultraviolet luminosity, compared across feedback prescriptions and redshift.</p></div></article>
+          <article class="finding-row"><span>02</span><div><h3>Stellar-mass growth</h3><p>Assembly histories and the relation between stellar mass, halo mass, and environment.</p></div></article>
+          <article class="finding-row"><span>03</span><div><h3>Star-formation variability</h3><p>Bursty and smooth growth histories and their influence on instantaneous observability.</p></div></article>
+          <article class="finding-row"><span>04</span><div><h3>Ionising contribution</h3><p>The relationship between a galaxy’s observable properties and its contribution to the ionising budget.</p></div></article>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="visuals-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">04 · Visual archive</p><p>Publication figures to be attached.</p></aside>
+        <div><h2 id="visuals-title">Population trends</h2><div class="media-grid" style="margin-top:2rem">
+          <figure class="media-item"><div class="media-placeholder">UV luminosity function · In preparation</div><figcaption>Planned redshift-dependent comparison across feedback models and observational samples.</figcaption></figure>
+          <figure class="media-item"><div class="media-placeholder">Galaxy–halo relation · In preparation</div><figcaption>Planned scaling-relation view with sample definition, scatter, and selection information.</figcaption></figure>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="resources-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">05 · Resources</p><p>Key papers and adjacent work.</p></aside>
+        <div><h2 id="resources-title">Continue exploring</h2><div class="resource-list" style="margin-top:2rem">
+          <a class="resource-link" href="https://ui.adsabs.harvard.edu/abs/2026MNRAS.545f2240B/abstract" target="_blank" rel="noopener"><span>UVLF variability with SPICE</span><span aria-hidden="true">↗</span></a>
+          <a class="resource-link" href="https://ui.adsabs.harvard.edu/abs/2024MNRAS.531.3406B/abstract" target="_blank" rel="noopener"><span>Flagship SPICE paper</span><span aria-hidden="true">↗</span></a>
+          <a class="resource-link" href="project-mock-observables.html"><span>Mock observables project</span><span aria-hidden="true">→</span></a>
+          <a class="resource-link" href="publications.html"><span>All SPICE publications</span><span aria-hidden="true">→</span></a>
+        </div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-grid"><div><a class="brand" href="index.html">SPICE</a><p>Radiation-hydrodynamics simulations of stellar feedback, the first galaxies, and cosmic reionisation.</p></div><div class="footer-links"><a href="index.html#projects">All projects</a><a href="simulations.html">Project description</a><a href="publications.html">Publications</a></div></div></footer>
+  <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
 </body>
 </html>

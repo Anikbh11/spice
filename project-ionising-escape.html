@@ -1,113 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SPICE — Ionising escape from early galaxies</title>
-<style>
-:root{--bg:#f5f1ea;--ink:#1d1a17;--muted:#746d64;--accent:#9a8471;--line:rgba(29,26,23,0.08);--radius:14px}
-*{box-sizing:border-box} html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}
-h1,h2,h3{font-family:Georgia,serif;font-weight:500;letter-spacing:-0.02em;margin-top:0}
-a{color:inherit;text-decoration:none}
-.container{max-width:1100px;margin:auto;padding:2rem}
-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:4rem;font-size:.95rem}
-nav .left a,nav .right a{color:var(--muted);margin-left:1.2rem} nav .left a:first-child{margin-left:0} nav a:hover{color:var(--ink)}
-.kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem}
-.status{display:inline-block;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
-.hero{margin-bottom:6rem}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:end}
-.hero h1{font-size:4rem;line-height:1.02;max-width:11ch;margin-bottom:1rem}
-.hero-intro,.text,.caption{color:var(--muted)} .hero-intro{max-width:58ch;font-size:1.05rem}
-.hero-meta{padding-top:1rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem} .hero-meta div{margin-bottom:.6rem}
-.hero-media{margin-top:2.5rem;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#ddd,#eee);min-height:420px}
-.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover;display:block}
-.section{margin-bottom:6rem} .section h2{font-size:2.2rem;margin-bottom:1rem} .text{max-width:700px}
-.media-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:1rem;margin-top:2rem}
-.media-stack{display:grid;gap:1rem}
-.media-frame{overflow:hidden;border-radius:var(--radius);background:linear-gradient(135deg,#ddd,#eee);min-height:240px}
-.media-frame.tall{min-height:500px}
-.media-frame img,.media-frame video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
-.media-frame:hover img,.media-frame:hover video{transform:scale(1.03)}
-.caption{font-size:.84rem;margin-top:.45rem}
-.result-list{margin-top:1.5rem}
-.result-item{padding:1rem 0;border-bottom:1px solid var(--line)}
-.result-item strong{display:block;margin-bottom:.25rem;font-family:Georgia,serif;font-size:1.15rem}
-.links{display:grid;gap:.8rem;max-width:500px;margin-top:1.5rem}
-.links a{color:var(--muted);border-bottom:1px solid transparent;width:fit-content;transition:.2s ease}
-.links a:hover{color:var(--accent);border-bottom-color:var(--accent)}
-.fade-in{opacity:0;transform:translateY(24px);transition:opacity .9s ease, transform .9s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
-@media(max-width:900px){.hero-grid,.media-grid{grid-template-columns:1fr} .hero h1{font-size:2.9rem;max-width:none} .hero-media{min-height:300px} .media-frame.tall{min-height:280px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SPICE research on ionising-photon escape from early galaxies and its relationship to stellar feedback and gas geometry.">
+  <meta name="theme-color" content="#f3f0e9">
+  <link rel="canonical" href="https://anikbh11.github.io/spice/project-ionising-escape.html">
+  <title>Ionising escape from early galaxies | SPICE</title>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
 </head>
 <body>
-<div class="container">
-<nav>
-  <div class="left"><a href="index.html">← SPICE</a></div>
-  <div class="right"><a href="#overview">Overview</a><a href="#visuals">Visuals</a><a href="#results">Results</a><a href="#links">Links</a></div>
-</nav>
-<section class="hero fade-in">
-  <div class="hero-grid">
-    <div>
-      <div class="kicker">SPICE / Project page</div>
-      <div class="status">Published project</div>
-      <h1>Ionising escape from early galaxies</h1>
-      <p class="hero-intro">This project studies how ionising radiation escapes from high-redshift galaxies, focusing on feedback-driven porosity, bursty star formation, and the evolving structure of the interstellar medium.</p>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="shell site-header-inner">
+      <a class="brand" href="index.html" aria-label="SPICE homepage">SPICE <small>Simulation suite</small></a>
+      <nav class="site-nav" aria-label="Primary navigation"><a href="simulations.html">Project description</a><a href="index.html#projects" aria-current="page">Projects</a><a href="publications.html">Publications</a><a href="data.html">Data</a><a href="images.html">Media</a><a href="index.html#people">People</a><a href="contact.html">Contact</a></nav>
     </div>
-    <div class="hero-meta">
-      <div><strong>Theme</strong> · galaxy feedback and reionisation</div>
-      <div><strong>Scope</strong> · escape fractions, time variability, halo mass dependence</div>
-      <div><strong>Outputs</strong> · figures, movies, derived measurements</div>
-    </div>
-  </div>
-  <div class="hero-media"><img src="images/ionising-escape-hero.png" alt="Ionising escape from early galaxies visual"></div>
-</section>
-<section class="section fade-in" id="overview">
-  <div class="kicker">Overview</div>
-  <h2>Scientific context</h2>
-  <p class="text">This project studies how ionising radiation escapes from high-redshift galaxies, focusing on feedback-driven porosity, bursty star formation, and the evolving structure of the interstellar medium.</p>
-  <p class="text">Escape fractions are not imposed externally but emerge from the interaction between stellar feedback, star formation history, and gas geometry, producing highly time-variable leakage into the surrounding medium.</p>
-</section>
-<section class="section fade-in" id="visuals">
-  <div class="kicker">Visual archive</div>
-  <h2>Figures and media</h2>
-  <div class="media-grid">
-    <div>
-      <div class="media-frame tall"><img src="images/ionisation-map-project.png" alt="Ionising escape from early galaxies visual"></div>
-      <div class="caption">Large-scale ionisation structure linked to clustered source populations.</div>
-    </div>
-    <div class="media-stack">
-      <div>
-        <div class="media-frame"><img src="images/galaxy-zoom-project.png" alt="Ionising escape from early galaxies visual"></div>
-        <div class="caption">Galaxy-scale zoom showing local gas structure and feedback channels.</div>
+  </header>
+
+  <main id="main">
+    <header class="page-hero shell reveal">
+      <div class="page-hero-grid">
+        <div><p class="eyebrow">Project 01 · Radiation escape</p><h1>Ionising escape from early galaxies</h1><p>How feedback-driven porosity, bursty star formation, and the changing structure of interstellar gas regulate the radiation available to reionise the Universe.</p></div>
+        <div class="metadata"><div><strong>Status</strong><span>Published research</span></div><div><strong>Scale</strong><span>Galaxies and circumgalactic gas</span></div><div><strong>Focus</strong><span>Escape fraction and variability</span></div><div><strong>Methods</strong><span>Matched feedback models</span></div></div>
       </div>
-      <div>
-        <div class="media-frame"><video controls poster="images/project-movie-poster.png"><source src="movies/ionising-escape.mp4" type="video/mp4"></video></div>
-        <div class="caption">Time-evolution movie of radiation escape and surrounding morphology.</div>
+    </header>
+
+    <section class="content-section shell" aria-labelledby="question-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">01 · Question</p><p>From stars to the intergalactic medium.</p></aside>
+        <div class="prose"><h2 id="question-title">What lets ionising photons escape?</h2><p class="lead">The production of ionising radiation is only part of the reionisation problem. Photons must also travel through a dense, structured, and rapidly changing interstellar medium.</p><p>SPICE follows radiation transport together with star formation and feedback, allowing the escape fraction to emerge from the evolving gas distribution rather than being imposed as an external parameter.</p><p>The matched feedback runs make it possible to examine how the cadence and energy of stellar feedback affect low-density channels, temporal variability, and the relative contribution of galaxies across halo mass.</p></div>
       </div>
-    </div>
-  </div>
-</section>
-<section class="section fade-in" id="results">
-  <div class="kicker">Results</div>
-  <h2>Key findings</h2>
-  <div class="result-list"><div class="result-item"><strong>Escape is highly time-variable</strong><span class="text">Short-lived feedback episodes can temporarily open channels through which ionising radiation escapes far more efficiently.</span></div><div class="result-item"><strong>Low-mass systems can contribute strongly</strong><span class="text">Even relatively faint galaxies may become important sources during bursty phases of star formation and outflow-driven clearing.</span></div><div class="result-item"><strong>Geometry matters</strong><span class="text">The anisotropic structure of dense gas strongly shapes when and where radiation can propagate beyond the galaxy.</span></div></div>
-</section>
-<section class="section fade-in" id="links">
-  <div class="kicker">Resources</div>
-  <h2>Project links</h2>
-  <div class="links"><a href="#">Paper / arXiv</a><a href="#">Journal article</a><a href="#">Figures and movies</a><a href="#">Related data products</a></div>
-</section>
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const items = document.querySelectorAll(".fade-in");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add("visible"); });
-  }, { threshold: 0.15 });
-  items.forEach(item => observer.observe(item));
-});
-</script>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="findings-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">02 · Interpretation</p><p>Mechanisms explored by the project.</p></aside>
+        <div><h2 id="findings-title">Physical picture</h2><div class="finding-list" style="margin-top:2rem">
+          <article class="finding-row"><span>01</span><div><h3>Escape is time-dependent</h3><p>Short-lived episodes of star formation and feedback can rearrange the surrounding gas and change when radiation can propagate beyond a galaxy.</p></div></article>
+          <article class="finding-row"><span>02</span><div><h3>Geometry matters</h3><p>Dense gas is not distributed uniformly. Direction-dependent low-density paths can create highly anisotropic radiation escape.</p></div></article>
+          <article class="finding-row"><span>03</span><div><h3>Feedback links scales</h3><p>Processes acting inside galaxies change the surrounding radiation field and the larger-scale progress of reionisation.</p></div></article>
+        </div><p class="notice">These summaries describe the project’s interpretation layer. Final quantitative statements should be paired with the exact figure, sample definition, and publication citation.</p></div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="visuals-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">03 · Visual archive</p><p>Verified media to be attached.</p></aside>
+        <div><h2 id="visuals-title">Escape across space and time</h2><div class="media-grid" style="margin-top:2rem">
+          <figure class="media-item"><div class="media-placeholder">Ionising escape map · In preparation</div><figcaption>Planned galaxy-scale view of gas structure and direction-dependent radiation escape.</figcaption></figure>
+          <figure class="media-item"><div class="media-placeholder">Escape history · In preparation</div><figcaption>Planned time-series comparison connecting star formation, feedback, and escape fraction.</figcaption></figure>
+        </div><p class="notice">No missing files are requested by this page. These slots will remain explicit preparation states until publication-approved images and movies are available.</p></div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="resources-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">04 · Resources</p><p>Context and related literature.</p></aside>
+        <div><h2 id="resources-title">Continue exploring</h2><div class="resource-list" style="margin-top:2rem">
+          <a class="resource-link" href="https://ui.adsabs.harvard.edu/abs/2024MNRAS.531.3406B/abstract" target="_blank" rel="noopener"><span>Flagship SPICE paper</span><span aria-hidden="true">↗</span></a>
+          <a class="resource-link" href="https://ui.adsabs.harvard.edu/abs/2026A%26A...707A.352G/abstract" target="_blank" rel="noopener"><span>Ionising escape constraints</span><span aria-hidden="true">↗</span></a>
+          <a class="resource-link" href="project-reionisation-structure.html"><span>Reionisation topology</span><span aria-hidden="true">→</span></a>
+          <a class="resource-link" href="publications.html"><span>All SPICE publications</span><span aria-hidden="true">→</span></a>
+        </div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-grid"><div><a class="brand" href="index.html">SPICE</a><p>Radiation-hydrodynamics simulations of stellar feedback, the first galaxies, and cosmic reionisation.</p></div><div class="footer-links"><a href="index.html#projects">All projects</a><a href="simulations.html">Project description</a><a href="publications.html">Publications</a></div></div></footer>
+  <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
 </body>
 </html>

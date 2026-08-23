@@ -1,200 +1,119 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Publications — SPICE</title>
-<style>
-/* ── Exact tokens from main page ── */
-:root{
-  --bg:#f4f1ea;
-  --ink:#1a1816;
-  --muted:#7a7368;
-  --accent:#8c7c69;
-  --line:rgba(0,0,0,0.08);
-  --radius:12px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.72;text-align:justify}
-h1,h2,h3,h4{font-family:Georgia,serif;font-weight:500;letter-spacing:-0.02em;margin-top:0}
-a{color:inherit;text-decoration:none}
-.container{max-width:1200px;margin:auto;padding:4rem}
-
-/* ── Nav — identical to main page ── */
-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:5rem}
-nav .logo{font-family:Georgia,serif;font-size:1.4rem}
-nav .links a{margin-left:1.5rem;color:var(--muted);font-size:.9rem}
-nav .links a:hover{color:var(--ink)}
-
-.section{margin-bottom:6rem}
-.section h2{font-size:2.2rem;margin-bottom:1.4rem}
-
-/* ── Publication list ── */
-.pub-group{margin-bottom:3.5rem}
-.pub-group h2{font-size:1.6rem;margin-bottom:1.2rem}
-
-.pub-item{
-  padding:1.1rem 0;
-  border-bottom:1px solid var(--line);
-  text-align:left;
-}
-.pub-item:last-child{border-bottom:none}
-
-.pub-item a{
-  font-family:Georgia,serif;
-  font-size:1rem;
-  color:var(--ink);
-  font-weight:500;
-  line-height:1.4;
-  border-bottom:1px solid transparent;
-  transition:.2s ease;
-}
-.pub-item a:hover{color:var(--accent);border-bottom-color:var(--accent)}
-
-.pub-authors{
-  margin-top:.3rem;
-  font-size:.875rem;
-  color:var(--muted);
-  line-height:1.6;
-}
-.pub-journal{
-  display: inline; 
-  margin-top:.2rem;
-  font-size:.82rem;
-  color:var(--accent);
-  letter-spacing:.02em;
-}
-
-.fade-in{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
-
-/* ── Scroll-to-top — identical to main page ── */
-#scroll-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--bg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .3s ease,transform .3s ease,background .2s ease;z-index:999}
-#scroll-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
-#scroll-top:hover{background:var(--accent)}
-#scroll-top svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-
-@media(max-width:900px){
-  .container{padding:2rem}
-  nav{margin-bottom:3rem}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Publications from the SPICE simulation collaboration and related studies using SPICE data.">
+  <meta name="theme-color" content="#f3f0e9">
+  <link rel="canonical" href="https://anikbh11.github.io/spice/publications.html">
+  <title>Publications | SPICE</title>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
 </head>
 <body>
-
-  <button id="scroll-top" aria-label="Scroll to top">
-  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
-
-<div class="container">
-  <nav>
-    <div class="left"><a href="index.html">← SPICE HOMEPAGE</a></div>
-  </nav>
-
-  <section class="section fade-in">
-    <h2>Publications</h2>
-
-    <!-- Main publications -->
-    <div class="pub-group">
-      <h2>Main Publications</h2>
-
-      <div class="pub-item">
-        <a href="https://ui.adsabs.harvard.edu/abs/2024MNRAS.531.3406B/abstract" target="_blank">SPICE: the connection between cosmic reionization and stellar feedback in the first galaxies</a>
-        <div class="pub-authors">Aniket Bhagwat, Tiago Costa, Benedetta Ciardi, R&uuml;diger Pakmor, Enrico Garaldi</div>
-        <div class="pub-journal">MNRAS, 2024, 531, 3406</div>
-      </div>
-
-      <div class="pub-item">
-        <a href="https://ui.adsabs.harvard.edu/abs/2025MNRAS.542..128B/abstract" target="_blank">Ly&alpha; with SPICE: interpreting Ly&alpha; emission at z &gt; 5</a>
-        <div class="pub-authors">Aniket Bhagwat, Lorenzo Napolitano, Laura Pentericci, Benedetta Ciardi, Tiago Costa</div>
-        <div class="pub-journal">MNRAS, 2025, 542, 128</div>
-      </div>
-
-      <div class="pub-item">
-        <a href="https://ui.adsabs.harvard.edu/abs/2026MNRAS.545f2240B/abstract" target="_blank">Variability of the UV luminosity function with SPICE</a>
-        <div class="pub-authors">Arghyadeep Basu, Aniket Bhagwat, Tiago Costa</div>
-        <div class="pub-journal">MNRAS, 2026, 545, 2240</div>
-      </div>
-
-      <div class="pub-item">
-        <a href="https://ui.adsabs.harvard.edu/abs/2026arXiv260418730C/abstract" target="_blank">New constraints on stellar feedback through [O III] emission: interpreting ALMA and JWST observations with SPICE simulations</a>
-        <div class="pub-authors">Benedetta Casavecchia, Aniket Bhagwat, Benedetta Ciardi, Celine Peroux, Tiago Costa</div>
-        <div class="pub-journal">MNRAS, 2026, in press</div>
-      </div>
-
-      <div class="pub-item">
-        <a href="https://ui.adsabs.harvard.edu/abs/2026arXiv260418731B/abstract" target="_blank">Stellar feedback SPICEs up [C II] emission in the first galaxies</a>
-        <div class="pub-authors">Aniket Bhagwat, Tiago Costa, Benedetta Ciardi, Fabrizio Arrigoni Battaia</div>
-        <div class="pub-journal">MNRAS, 2026, submitted</div>
-      </div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="shell site-header-inner">
+      <a class="brand" href="index.html" aria-label="SPICE homepage">SPICE <small>Simulation suite</small></a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="simulations.html">Project description</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="publications.html" aria-current="page">Publications</a>
+        <a href="data.html">Data</a>
+        <a href="images.html">Media</a>
+        <a href="index.html#people">People</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
+  </header>
 
-        <!-- Other publications -->
-    <div class="pub-group">
-      <h2>Other Publications using SPICE</h2>
-
-      <div class="pub-item">
-        <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...989..147G/abstract" target="_blank">Metallicity Gradients in Modern Cosmological Simulations. I. Tension between Smooth Stellar Feedback Models and Observations</a>
-        <div class="pub-authors">
-          Alex M. Garcia et al., <span class="pub-journal">ApJ, 2025, 989, 147</span>
+  <main id="main">
+    <header class="page-hero shell reveal">
+      <div class="page-hero-grid">
+        <div>
+          <p class="eyebrow">Research record</p>
+          <h1>Publications</h1>
+          <p>Flagship SPICE papers and independent studies that use the simulations to interpret galaxies and intergalactic gas during reionisation.</p>
+        </div>
+        <div class="metadata" aria-label="Publication catalogue summary">
+          <div><strong>Coverage</strong><span>2024–2026</span></div>
+          <div><strong>Primary works</strong><span>5 publications</span></div>
+          <div><strong>Related works</strong><span>6 publications</span></div>
+          <div><strong>Links</strong><span>NASA ADS records</span></div>
         </div>
       </div>
+    </header>
 
-      <div class="pub-item">
-        <a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...708A.265D/abstract" target="_blank">Uncovering the absorbed atomic Universe with the [OI]63 &micro;m line</a>
-        <div class="pub-authors">
-          Carlos De Breuck et al., <span class="pub-journal">A&amp;A, 2026, 708, 265</span>
+    <section class="content-section shell" aria-labelledby="primary-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">Primary literature</p><p>Methods and science led by the SPICE collaboration.</p></aside>
+        <div>
+          <h2 id="primary-title">Main publications</h2>
+          <div class="publication-list" style="margin-top:2rem">
+            <article class="publication-item" id="paper-2024-methods">
+              <span class="publication-year">2024</span>
+              <div><a class="publication-title" href="https://ui.adsabs.harvard.edu/abs/2024MNRAS.531.3406B/abstract" target="_blank" rel="noopener">SPICE: the connection between cosmic reionization and stellar feedback in the first galaxies</a><div class="publication-authors">Aniket Bhagwat, Tiago Costa, Benedetta Ciardi, Rüdiger Pakmor &amp; Enrico Garaldi</div><a class="atlas-link" href="project-feedback-reionisation.html">Read project summary →</a></div>
+              <span class="publication-journal">MNRAS 531, 3406</span>
+            </article>
+
+            <article class="publication-item" id="paper-2025-lya">
+              <span class="publication-year">2025</span>
+              <div><a class="publication-title" href="https://ui.adsabs.harvard.edu/abs/2025MNRAS.542..128B/abstract" target="_blank" rel="noopener">Lyα with SPICE: interpreting Lyα emission at <i>z</i> &gt; 5</a><div class="publication-authors">Aniket Bhagwat, Lorenzo Napolitano, Laura Pentericci, Benedetta Ciardi &amp; Tiago Costa</div><a class="atlas-link" href="project-lya-emission.html">Read project summary →</a></div>
+              <span class="publication-journal">MNRAS 542, 128</span>
+            </article>
+
+            <article class="publication-item" id="paper-2026-uvlf">
+              <span class="publication-year">2026</span>
+              <div><a class="publication-title" href="https://ui.adsabs.harvard.edu/abs/2026MNRAS.545f2240B/abstract" target="_blank" rel="noopener">Variability of the UV luminosity function with SPICE</a><div class="publication-authors">Arghyadeep Basu, Aniket Bhagwat, Benedetta Ciardi &amp; Tiago Costa</div><a class="atlas-link" href="project-uvlf-variability.html">Read project summary →</a></div>
+              <span class="publication-journal">MNRAS 545, 2240</span>
+            </article>
+
+            <article class="publication-item" id="paper-2026-oiii">
+              <span class="publication-year">2026</span>
+              <div><a class="publication-title" href="https://ui.adsabs.harvard.edu/abs/2026arXiv260418730C/abstract" target="_blank" rel="noopener">New constraints on stellar feedback through [O III] emission: interpreting ALMA and JWST observations with SPICE simulations</a><div class="publication-authors">Benedetta Casavecchia, Aniket Bhagwat, Benedetta Ciardi, Céline Péroux &amp; Tiago Costa</div><a class="atlas-link" href="project-oiii-emission.html">Read project summary →</a></div>
+              <span class="publication-journal">MNRAS, in press</span>
+            </article>
+
+            <article class="publication-item" id="paper-2026-cii">
+              <span class="publication-year">2026</span>
+              <div><a class="publication-title" href="https://ui.adsabs.harvard.edu/abs/2026arXiv260418731B/abstract" target="_blank" rel="noopener">Stellar feedback SPICEs up [C II] emission in the first galaxies</a><div class="publication-authors">Aniket Bhagwat, Tiago Costa, Benedetta Ciardi &amp; Fabrizio Arrigoni Battaia</div><a class="atlas-link" href="project-cii-emission.html">Read project summary →</a></div>
+              <span class="publication-journal">MNRAS, submitted</span>
+            </article>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="pub-item">
-        <a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...708A.102N/abstract" target="_blank">Ly&alpha; visibility from z = 4.5 to 11 in the UDS field: Evidence for a high neutral hydrogen fraction and small ionized bubbles at z &sim; 7</a>
-        <div class="pub-authors">
-          Lorenzo Napolitano et al., <span class="pub-journal">A&amp;A, 2026, 708, 102</span>
+    <section class="content-section shell" aria-labelledby="related-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">Collaborator literature</p><p>Observational studies and simulation comparisons that use SPICE as a physical reference.</p></aside>
+        <div>
+          <h2 id="related-title">Collaborator-led and comparative studies</h2>
+          <div class="publication-list" style="margin-top:2rem">
+            <article class="publication-item"><span class="publication-year">2025</span><div><a class="publication-title" href="https://ui.adsabs.harvard.edu/abs/2025ApJ...989..147G/abstract" target="_blank" rel="noopener">Metallicity Gradients in Modern Cosmological Simulations. I. Tension between Smooth Stellar Feedback Models and Observations</a><div class="publication-authors">Alex M. Garcia et al.</div><a class="atlas-link" href="project-metallicity-gradients-large-boxes.html">Read study summary →</a></div><span class="publication-journal">ApJ 989, 147</span></article>
+            <article class="publication-item"><span class="publication-year">2026</span><div><a class="publication-title" href="https://ui.adsabs.harvard.edu/abs/2026A%26A...708A.265D/abstract" target="_blank" rel="noopener">Uncovering the absorbed atomic Universe with the [O I] 63 μm line</a><div class="publication-authors">Carlos De Breuck et al.</div><a class="atlas-link" href="project-oi63-absorption.html">Read study summary →</a></div><span class="publication-journal">A&amp;A 708, 265</span></article>
+            <article class="publication-item"><span class="publication-year">2026</span><div><a class="publication-title" href="https://ui.adsabs.harvard.edu/abs/2026A%26A...708A.102N/abstract" target="_blank" rel="noopener">Lyα visibility from <i>z</i> = 4.5 to 11 in the UDS field: Evidence for a high neutral hydrogen fraction and small ionized bubbles at <i>z</i> ≈ 7</a><div class="publication-authors">Lorenzo Napolitano et al.</div><a class="atlas-link" href="project-lya-visibility-uds.html">Read study summary →</a></div><span class="publication-journal">A&amp;A 708, 102</span></article>
+            <article class="publication-item"><span class="publication-year">2026</span><div><a class="publication-title" href="https://ui.adsabs.harvard.edu/abs/2026arXiv260306409T/abstract" target="_blank" rel="noopener">The Collective Voice of Lyα Emitters: Insights from JWST Stacked Spectroscopy</a><div class="publication-authors">Roberta Tripodi et al.</div><a class="atlas-link" href="project-lya-stacks.html">Read study summary →</a></div><span class="publication-journal">A&amp;A, submitted</span></article>
+            <article class="publication-item"><span class="publication-year">2026</span><div><a class="publication-title" href="https://ui.adsabs.harvard.edu/abs/2026A%26A...707A.352G/abstract" target="_blank" rel="noopener">Breaking through the cosmic fog: JWST/NIRSpec constraints on ionizing photon escape in reionization-era galaxies</a><div class="publication-authors">Emma Giovinazzo et al.</div><a class="atlas-link" href="project-ionising-escape-jwst.html">Read study summary →</a></div><span class="publication-journal">A&amp;A 707, 352</span></article>
+            <article class="publication-item"><span class="publication-year">2026</span><div><a class="publication-title" href="https://ui.adsabs.harvard.edu/abs/2026ApJ..1001..188G/abstract" target="_blank" rel="noopener">Metallicity Gradients in Modern Cosmological Simulations. II. The Role of Bursty versus Smooth Feedback at High Redshift</a><div class="publication-authors">Alex M. Garcia et al.</div><a class="atlas-link" href="project-metallicity-gradients-feedback.html">Read study summary →</a></div><span class="publication-journal">ApJ 1001, 188</span></article>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="pub-item">
-        <a href="https://ui.adsabs.harvard.edu/abs/2026arXiv260306409T/abstract" target="_blank">The Collective Voice of Ly&alpha; Emitters: Insights from JWST Stacked Spectroscopy</a>
-        <div class="pub-authors">
-          Roberta Tripodi et al., <span class="pub-journal">A&amp;A, 2026, submitted</span>
+    <section class="content-section shell" aria-labelledby="citation-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">Citation</p><p>Guidance for simulation-derived work.</p></aside>
+        <div class="prose">
+          <h2 id="citation-title">How to cite SPICE</h2>
+          <p class="lead">Use the flagship methodology paper together with the science paper most directly connected to the data product or observable in question.</p>
+          <p class="notice">A downloadable BibTeX collection and data-release citation should be added when the public data products and their version identifiers are finalised.</p>
         </div>
       </div>
+    </section>
+  </main>
 
-      <div class="pub-item">
-        <a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...707A.352G/abstract" target="_blank">Breaking through the cosmic fog: JWST/NIRSpec constraints on ionizing photon escape in reionization-era galaxies</a>
-        <div class="pub-authors">
-          Emma Giovinazzo et al., <span class="pub-journal">A&amp;A, 2026, 707, 352</span>
-        </div>
-      </div>
-
-      <div class="pub-item">
-        <a href="https://ui.adsabs.harvard.edu/abs/2026ApJ..1001..188G/abstract" target="_blank">Metallicity Gradients in Modern Cosmological Simulations. II. The Role of Bursty versus Smooth Feedback at High Redshift</a>
-        <div class="pub-authors">
-           Alex M. Garcia et al., <span class="pub-journal">ApJ, 2026, 1001, 188</span>
-        </div>
-      </div>
-    </div>
-
-  </section>
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const items = document.querySelectorAll(".fade-in");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add("visible"); });
-  }, { threshold: 0.15 });
-  items.forEach(item => observer.observe(item));
-});
-
-const scrollBtn = document.getElementById("scroll-top");
-window.addEventListener("scroll", () => {
-  scrollBtn.classList.toggle("visible", window.scrollY > 400);
-});
-scrollBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-</script>
+  <footer class="site-footer"><div class="shell footer-grid"><div><a class="brand" href="index.html">SPICE</a><p>Radiation-hydrodynamics simulations of stellar feedback, the first galaxies, and cosmic reionisation.</p></div><div class="footer-links"><a href="simulations.html">Project description</a><a href="images.html">Media</a><a href="https://github.com/Anikbh11/spice" target="_blank" rel="noopener">GitHub</a></div></div></footer>
+  <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
 </body>
 </html>

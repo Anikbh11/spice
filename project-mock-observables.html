@@ -1,113 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SPICE — Mock observables and synthetic surveys</title>
-<style>
-:root{--bg:#11110f;--ink:#f3eee6;--muted:#b9afa3;--accent:#c6a57a;--line:rgba(255,255,255,0.08);--radius:14px}
-*{box-sizing:border-box} html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}
-h1,h2,h3{font-family:Georgia,serif;font-weight:500;letter-spacing:-0.02em;margin-top:0}
-a{color:inherit;text-decoration:none}
-.container{max-width:1100px;margin:auto;padding:2rem}
-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:4rem;font-size:.95rem}
-nav .left a,nav .right a{color:var(--muted);margin-left:1.2rem} nav .left a:first-child{margin-left:0} nav a:hover{color:var(--ink)}
-.kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem}
-.status{display:inline-block;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
-.hero{margin-bottom:6rem}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:end}
-.hero h1{font-size:4rem;line-height:1.02;max-width:11ch;margin-bottom:1rem}
-.hero-intro,.text,.caption{color:var(--muted)} .hero-intro{max-width:58ch;font-size:1.05rem}
-.hero-meta{padding-top:1rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem} .hero-meta div{margin-bottom:.6rem}
-.hero-media{margin-top:2.5rem;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#2a2724,#1a1916);min-height:420px}
-.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover;display:block}
-.section{margin-bottom:6rem} .section h2{font-size:2.2rem;margin-bottom:1rem} .text{max-width:700px}
-.media-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:1rem;margin-top:2rem}
-.media-stack{display:grid;gap:1rem}
-.media-frame{overflow:hidden;border-radius:var(--radius);background:linear-gradient(135deg,#2a2724,#1a1916);min-height:240px}
-.media-frame.tall{min-height:500px}
-.media-frame img,.media-frame video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
-.media-frame:hover img,.media-frame:hover video{transform:scale(1.03)}
-.caption{font-size:.84rem;margin-top:.45rem}
-.result-list{margin-top:1.5rem}
-.result-item{padding:1rem 0;border-bottom:1px solid var(--line)}
-.result-item strong{display:block;margin-bottom:.25rem;font-family:Georgia,serif;font-size:1.15rem}
-.links{display:grid;gap:.8rem;max-width:500px;margin-top:1.5rem}
-.links a{color:var(--muted);border-bottom:1px solid transparent;width:fit-content;transition:.2s ease}
-.links a:hover{color:var(--accent);border-bottom-color:var(--accent)}
-.fade-in{opacity:0;transform:translateY(24px);transition:opacity .9s ease, transform .9s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
-@media(max-width:900px){.hero-grid,.media-grid{grid-template-columns:1fr} .hero h1{font-size:2.9rem;max-width:none} .hero-media{min-height:300px} .media-frame.tall{min-height:280px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SPICE work translating simulated early galaxies into photometry, emission-line predictions, and synthetic survey products.">
+  <meta name="theme-color" content="#f3f0e9">
+  <link rel="canonical" href="https://anikbh11.github.io/spice/project-mock-observables.html">
+  <title>Mock observables and synthetic surveys | SPICE</title>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
 </head>
 <body>
-<div class="container">
-<nav>
-  <div class="left"><a href="index.html">← SPICE</a></div>
-  <div class="right"><a href="#overview">Overview</a><a href="#visuals">Visuals</a><a href="#results">Results</a><a href="#links">Links</a></div>
-</nav>
-<section class="hero fade-in">
-  <div class="hero-grid">
-    <div>
-      <div class="kicker">SPICE / Project page</div>
-      <div class="status">In progress</div>
-      <h1>Mock observables and synthetic surveys</h1>
-      <p class="hero-intro">This project translates SPICE outputs into observable forms: broadband photometry, emission-line predictions, morphology, and survey-like mock products for comparison to current and future observations.</p>
-    </div>
-    <div class="hero-meta">
-      <div><strong>Theme</strong> · theory to observation</div>
-      <div><strong>Scope</strong> · photometry, lines, morphology, survey products</div>
-      <div><strong>Outputs</strong> · mock catalogs, figures, movies</div>
-    </div>
-  </div>
-  <div class="hero-media"><video controls poster="images/project-movie-poster.png"><source src="movies/mock-observables.mp4" type="video/mp4"></video></div>
-</section>
-<section class="section fade-in" id="overview">
-  <div class="kicker">Overview</div>
-  <h2>Scientific context</h2>
-  <p class="text">This project translates SPICE outputs into observable forms: broadband photometry, emission-line predictions, morphology, and survey-like mock products for comparison to current and future observations.</p>
-  <p class="text">These products bridge theory and observation by placing simulated galaxies into forms that can be compared more directly to real survey data.</p>
-</section>
-<section class="section fade-in" id="visuals">
-  <div class="kicker">Visual archive</div>
-  <h2>Figures and media</h2>
-  <div class="media-grid">
-    <div>
-      <div class="media-frame tall"><img src="images/mock-observables-poster.png" alt="Mock observables and synthetic surveys visual"></div>
-      <div class="caption">Representative synthetic-survey visual.</div>
-    </div>
-    <div class="media-stack">
-      <div>
-        <div class="media-frame"><img src="images/galaxy-zoom.png" alt="Mock observables and synthetic surveys visual"></div>
-        <div class="caption">Morphology-style support image.</div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header"><div class="shell site-header-inner"><a class="brand" href="index.html" aria-label="SPICE homepage">SPICE <small>Simulation suite</small></a><nav class="site-nav" aria-label="Primary navigation"><a href="simulations.html">Project description</a><a href="index.html#projects" aria-current="page">Projects</a><a href="publications.html">Publications</a><a href="data.html">Data</a><a href="images.html">Media</a><a href="index.html#people">People</a><a href="contact.html">Contact</a></nav></div></header>
+
+  <main id="main">
+    <header class="page-hero shell reveal">
+      <div class="page-hero-grid">
+        <div><p class="eyebrow">Project 04 · Theory to observation</p><h1>Mock observables and synthetic surveys</h1><p>Translating SPICE outputs into photometry, emission-line predictions, morphology, and survey-facing products for comparison with current observations.</p></div>
+        <div class="metadata"><div><strong>Status</strong><span>In progress</span></div><div><strong>Scale</strong><span>Galaxies to survey catalogues</span></div><div><strong>Focus</strong><span>Photometry and line emission</span></div><div><strong>Facilities</strong><span>JWST, ALMA, VLT</span></div></div>
       </div>
-      <div>
-        <div class="media-frame"><video controls poster="images/project-movie-poster.png"><source src="movies/mock-observables.mp4" type="video/mp4"></video></div>
-        <div class="caption">Mock observables movie.</div>
+    </header>
+
+    <section class="content-section shell" aria-labelledby="question-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">01 · Question</p><p>Making like-for-like comparisons.</p></aside>
+        <div class="prose"><h2 id="question-title">What would SPICE galaxies look like?</h2><p class="lead">Simulation variables become most useful to observers when they are translated into measurements made by real instruments and surveys.</p><p>This project develops survey-facing products such as broadband fluxes, emission-line predictions, image-based morphology, and compact catalogue quantities.</p><p>The aim is to preserve the physical information in SPICE while making selection effects, apertures, viewing geometry, and model assumptions explicit.</p></div>
       </div>
-    </div>
-  </div>
-</section>
-<section class="section fade-in" id="results">
-  <div class="kicker">Results</div>
-  <h2>Key findings</h2>
-  <div class="result-list"><div class="result-item"><strong>Synthetic photometry</strong><span class="text">Mock fluxes and colours across selected filters and instruments.</span></div><div class="result-item"><strong>Emission-line predictions</strong><span class="text">Line strengths and derived diagnostics for simulated galaxies.</span></div><div class="result-item"><strong>Morphology views</strong><span class="text">Image-based renderings designed to resemble survey products.</span></div><div class="result-item"><strong>Survey-facing summaries</strong><span class="text">Compact products for comparison with catalog-level observational measurements.</span></div></div>
-</section>
-<section class="section fade-in" id="links">
-  <div class="kicker">Resources</div>
-  <h2>Project links</h2>
-  <div class="links"><a href="#">Project notes</a><a href="#">Figures</a><a href="#">Mock catalogs</a></div>
-</section>
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const items = document.querySelectorAll(".fade-in");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add("visible"); });
-  }, { threshold: 0.15 });
-  items.forEach(item => observer.observe(item));
-});
-</script>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="products-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">02 · Products</p><p>Connections between theory and measurement.</p></aside>
+        <div><h2 id="products-title">A survey-facing toolkit</h2><div class="finding-list" style="margin-top:2rem">
+          <article class="finding-row"><span>01</span><div><h3>Synthetic photometry</h3><p>Model fluxes and colours through defined instrument filters, paired with the assumptions required to produce them.</p></div></article>
+          <article class="finding-row"><span>02</span><div><h3>Emission-line predictions</h3><p>Line luminosities and ratios that connect feedback-sensitive gas conditions to JWST, ALMA, and VLT measurements.</p></div></article>
+          <article class="finding-row"><span>03</span><div><h3>Morphological views</h3><p>Projected images that expose structure, orientation, and resolution effects rather than reducing galaxies to single integrated values.</p></div></article>
+          <article class="finding-row"><span>04</span><div><h3>Catalogue summaries</h3><p>Documented, versioned tables designed for reproducible comparisons with observational samples.</p></div></article>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="visuals-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">03 · Visual archive</p><p>Survey products are still being prepared.</p></aside>
+        <div><h2 id="visuals-title">From simulation cells to pixels</h2><div class="media-grid" style="margin-top:2rem">
+          <figure class="media-item"><div class="media-placeholder">Synthetic imaging · In preparation</div><figcaption>Planned multi-band mock image with filter, redshift, field of view, and point-spread-function metadata.</figcaption></figure>
+          <figure class="media-item"><div class="media-placeholder">Emission-line maps · In preparation</div><figcaption>Planned matched views of line-emitting gas and integrated galaxy observables.</figcaption></figure>
+          <figure class="media-item"><div class="media-placeholder">Survey movie · In preparation</div><figcaption>Planned sequence linking intrinsic physical fields to progressively observation-like products.</figcaption></figure>
+          <figure class="media-item"><div class="media-placeholder">Mock catalogue · Release pending</div><figcaption>Planned documented table with version, selection, units, and citation information.</figcaption></figure>
+        </div><p class="notice">The project is explicitly labelled in progress. Visuals and catalogues should not be presented as released until their assumptions, versioning, and citation information are fixed.</p></div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="resources-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">04 · Resources</p><p>Current observable-facing SPICE papers.</p></aside>
+        <div><h2 id="resources-title">Related work</h2><div class="resource-list" style="margin-top:2rem">
+          <a class="resource-link" href="https://ui.adsabs.harvard.edu/abs/2025MNRAS.542..128B/abstract" target="_blank" rel="noopener"><span>Lyα with SPICE</span><span aria-hidden="true">↗</span></a>
+          <a class="resource-link" href="https://ui.adsabs.harvard.edu/abs/2026arXiv260418730C/abstract" target="_blank" rel="noopener"><span>[O III] emission constraints</span><span aria-hidden="true">↗</span></a>
+          <a class="resource-link" href="https://ui.adsabs.harvard.edu/abs/2026arXiv260418731B/abstract" target="_blank" rel="noopener"><span>[C II] emission predictions</span><span aria-hidden="true">↗</span></a>
+          <a class="resource-link" href="project-galaxy-statistics.html"><span>Galaxy statistics project</span><span aria-hidden="true">→</span></a>
+        </div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-grid"><div><a class="brand" href="index.html">SPICE</a><p>Radiation-hydrodynamics simulations of stellar feedback, the first galaxies, and cosmic reionisation.</p></div><div class="footer-links"><a href="index.html#projects">All projects</a><a href="simulations.html">Project description</a><a href="publications.html">Publications</a></div></div></footer>
+  <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
 </body>
 </html>

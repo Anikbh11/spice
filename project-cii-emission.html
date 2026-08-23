@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SPICE research project: what carbon-two emission reveals about star formation, gas extent, kinematics, and outflows in early galaxies.">
+  <meta name="theme-color" content="#f3f0e9">
+  <link rel="canonical" href="https://anikbh11.github.io/spice/project-cii-emission.html">
+  <title>[C II] emission in the first galaxies | SPICE</title>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body class="paper-page paper-cii">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header"><div class="shell site-header-inner"><a class="brand" href="index.html" aria-label="SPICE homepage">SPICE <small>Simulation suite</small></a><nav class="site-nav" aria-label="Primary navigation"><a href="simulations.html">Project description</a><a href="index.html#projects" aria-current="page">Projects</a><a href="publications.html">Publications</a><a href="data.html">Data</a><a href="images.html">Media</a><a href="index.html#people">People</a><a href="contact.html">Contact</a></nav></div></header>
+
+  <main id="main">
+    <header class="page-hero shell reveal">
+      <div class="page-hero-grid">
+        <div class="paper-hero-copy">
+          <p class="eyebrow">Research project 05 · Far-infrared emission</p>
+          <h1>What [C II] reveals and misses</h1>
+          <p>The 158 μm line maps neutral star-forming gas with remarkable reach. SPICE shows that it can expose feedback-shaped structure while overlooking much of a galaxy's fastest outflowing material.</p>
+          <div class="paper-tags" aria-label="Topics"><span>[C II] 158 μm</span><span>ALMA</span><span>Gas cycling</span><span>Kinematics</span></div>
+        </div>
+        <figure class="paper-hero-visual"><img src="assets/images/papers/spice-cii-uv-maps.jpg" width="2170" height="2400" alt="Synthetic JWST colour images overlaid with carbon-two emission contours and accompanying line spectra for SPICE galaxies."><figcaption><strong>Cold gas extends beyond starlight.</strong> [C II] contours surround diverse UV morphologies, while similar-looking broad lines arise from rotation and outflow.</figcaption></figure>
+      </div>
+      <div class="paper-meta-strip" aria-label="Paper metadata"><div><strong>First author</strong><span>Aniket Bhagwat</span></div><div><strong>Status</strong><span>2026 preprint</span></div><div><strong>Coverage</strong><span><i>z</i> = 5–10</span></div><div><strong>Instrument model</strong><span>ALMA · 0.3 arcsec beam</span></div></div>
+    </header>
+
+    <section class="content-section shell" aria-labelledby="cii-question-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">01 · Question</p><p>A bright line with selective vision.</p></aside>
+        <div class="prose">
+          <h2 id="cii-question-title">What does [C II] actually trace?</h2>
+          <p class="lead">[C II] is routinely used to infer star formation, cold-gas structure, dynamics, and outflows in galaxies observed by ALMA during reionisation. But one line cannot represent every gas phase.</p>
+          <p>This study synthesises [C II] emission from SPICE galaxies from redshift ten to five, following how feedback changes luminosity, spatial extent, radial motion, spectral line shape, and rotational support. The three feedback models make it possible to separate a robust tracer relation from signals that depend strongly on how supernova energy is delivered.</p>
+          <p>The central result is deliberately two-sided: [C II] is a useful record of the cool, neutral reservoir and its large-scale organisation, yet it is a poor census of the hot and rapidly moving material that carries much of the wind.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="cii-method-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">02 · Method</p><p>From carbon ions to an ALMA-like cube.</p></aside>
+        <div>
+          <h2 id="cii-method-title">Building the observable</h2>
+          <div class="method-grid">
+            <article class="method-card"><span class="card-index">Ion balance</span><h3>Solve the carbon balance</h3><p>The post-processing follows equilibrium among C I, C II, and C III using the radiation field stored by the simulation. Collisions with electrons and neutral hydrogen set the [C II] emissivity cell by cell.</p></article>
+            <article class="method-card"><span class="card-index">Datacube</span><h3>Construct an ALMA-like cube</h3><p>Each galaxy is placed in a 50 kpc field with roughly 50 pc pixels, 30 km s<sup>−1</sup> channels across ±1000 km s<sup>−1</sup>, a 0.3 arcsec beam, and representative instrumental noise.</p></article>
+            <article class="method-card"><span class="card-index">Kinematics</span><h3>Recover sizes and motion</h3><p>Moment maps, radial profiles, and one- to three-component Gaussian fits connect line luminosity and extent to inflow, outflow, disc settling, and the underlying velocity field.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section shell paper-focus-section" aria-labelledby="cii-figure-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">03 · Figure guide</p><p>A familiar relation with a feedback-dependent offset.</p></aside>
+        <div>
+          <h2 id="cii-figure-title">[C II] follows star formation, but not identically</h2>
+          <figure class="paper-figure"><img src="assets/images/papers/spice-cii-sfr.png" width="2020" height="860" alt="Carbon-two luminosity versus star-formation rate for the Bursty-SN, Smooth-SN, and Hyper-SN models at redshifts ten, seven, and five, with ALMA observations."><figcaption><strong>Figure 2, Bhagwat et al. (2026).</strong> The columns follow cosmic time from redshift ten to five; coloured curves and bands show the median and 16th–84th percentile range for each feedback model, while stars mark ALMA measurements. Plot cropped from the <a href="https://arxiv.org/abs/2604.18731" target="_blank" rel="noopener">arXiv paper</a>.</figcaption></figure>
+          <div class="figure-reading" aria-label="How to read the figure">
+            <article><h3>Read the axes</h3><p>Moving right means a higher star-formation rate; moving up means a brighter [C II] line. The relation is already established by redshift ten and evolves only weakly afterward.</p></article>
+            <article><h3>Follow the columns</h3><p>Each column advances in cosmic time, from <i>z</i> = 10 to 7 and 5. Stars mark ALMA observations; coloured bands contain the central 68% of simulated galaxies.</p></article>
+            <article><h3>Watch the separation</h3><p>By redshifts seven and five, Bursty-SN galaxies above about 0.1 M<sub>⊙</sub> yr<sup>−1</sup> sit roughly 0.7–1 dex below the other models and develop substantially more scatter.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="cii-results-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">04 · Results</p><p>Useful signal, important blind spots.</p></aside>
+        <div>
+          <h2 id="cii-results-title">Six results beyond the headline relation</h2>
+          <div class="finding-list">
+            <article class="finding-row"><span>01</span><div><h3>A stable sequence, with a bursty deficit</h3><p>The luminosity–SFR sequence is present from redshift ten. At later times, bursty feedback lowers [C II] luminosity by about 0.7–1 dex at fixed SFR for actively star-forming systems and increases the intrinsic scatter.</p></div></article>
+            <article class="finding-row"><span>02</span><div><h3>The line follows neutral structure</h3><p>[C II] emission is strongest in clumpy neutral gas and photodissociation regions. Its luminosity and morphology depend on whether feedback preserves or disrupts the dense neutral reservoir.</p></div></article>
+            <article class="finding-row"><span>03</span><div><h3>[C II] extends well beyond the UV</h3><p>Typical [C II]-to-UV radius ratios are roughly two to four. Above 10<sup>6.5</sup> L<sub>⊙</sub>, the median ratios are 2.2 ± 0.2, 1.8 ± 0.2, and 1.7 ± 0.4 for Bursty-, Smooth-, and Hyper-SN respectively.</p></div></article>
+            <article class="finding-row"><span>04</span><div><h3>Outflows coexist with net inflow</h3><p>Radially moving gas is ubiquitous and the outflow rate rises with [C II] luminosity, yet the net mass flux at the [C II] radius is usually inward. These galaxies are still being fuelled while feedback ejects material.</p></div></article>
+            <article class="finding-row"><span>05</span><div><h3>The line misses most wind mass</h3><p>The bright [C II] component is centred near −50 km s<sup>−1</sup> and is approximately Gaussian, even when the full gas distribution reaches beyond 500 km s<sup>−1</sup>. In low-mass galaxies, [C II]-based mass-loading estimates can fall short by factors of 100–1000.</p></div></article>
+            <article class="finding-row"><span>06</span><div><h3>Disc settling records feedback history</h3><p>Among galaxies above 10<sup>8</sup> M<sub>⊙</sub> at redshift five, about 47% of Smooth-SN and 43% of Hyper-SN systems are classified as discs, compared with 28% under bursty feedback.</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="cii-meaning-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">05 · Interpretation</p><p>How to read future observations.</p></aside>
+        <div>
+          <h2 id="cii-meaning-title">A map of the reservoir, not the whole wind</h2>
+          <div class="analysis-grid">
+            <article class="analysis-card"><h3>Extended does not mean in-situ star formation</h3><p>Satellite galaxies contribute less than 0.1% of the total [C II] luminosity. A large [C II] halo can instead emerge as feedback redistributes enriched neutral gas beyond the compact UV-bright region.</p></article>
+            <article class="analysis-card"><h3>A broad line is not automatically a strong wind</h3><p>Smooth- and Hyper-SN can produce the broadest profiles even when their outflows are weaker, because line width also tracks circular velocity and gravitational support.</p></article>
+            <article class="analysis-card"><h3>Spectral stacking can retain a feedback clue</h3><p>The stacked Bursty-SN profile strongly prefers a broad second component with an inferred outflow speed near 326 km s<sup>−1</sup>; Smooth-SN is adequately described by one Gaussian.</p></article>
+            <article class="analysis-card"><h3>Pair cold and ionised tracers</h3><p>Joint ALMA and JWST measurements are needed to follow both the neutral reservoir and the warmer, faster phases. [C II] alone gives a systematically incomplete estimate of feedback-driven mass transport.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section shell paper-conclusion-section" aria-labelledby="cii-conclusion-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">06 · Conclusion</p><p>What [C II] traces, and what it misses.</p></aside>
+        <div>
+          <h2 id="cii-conclusion-title">Use [C II] for the reservoir, not the entire wind</h2>
+          <p class="conclusion-lede">[C II] is an excellent map of the cool, enriched, mostly neutral material that surrounds the ultraviolet-bright galaxy. The same selectivity makes it a poor census of the hottest and fastest outflowing gas, so line width or [C II]-based mass loading alone cannot describe the full feedback cycle.</p>
+          <p>This selection effect has two counter-intuitive observational consequences. At low stellar mass, [C II]-based mass-loading estimates can fall roughly 100–1000 times below the intrinsic multiphase value. Meanwhile, the broadest [C II] components occur in smooth and hypernova systems with weaker outflow signatures because line width follows the depth of the gravitational potential more closely than wind strength. Combining [C II] with ionised-gas lines and absorption diagnostics is therefore necessary to recover multiphase mass transport.</p>
+          <figure class="conclusion-figure"><img src="assets/images/summaries/spice-paper-infographic-cii-kinematics.png" width="1672" height="941" loading="lazy" alt="Publication-style infographic showing carbon-two phase selection, a fast line-faint multiphase wind, line width set by gravitational potential, and the gap between true and carbon-two-inferred mass loading."><figcaption><strong>A broad line is not a complete wind measurement</strong><span>The main panel shows [C II] selecting slow, cool material while the fastest phase becomes faint. The upper inset ties the broad component to the gravitational potential; the lower inset follows the paper’s divergent intrinsic and [C II]-inferred mass-loading trends at low mass. This is an explanatory synthesis, not an ALMA reconstruction or quantitative plot.</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="cii-limits-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">07 · Limits</p><p>Where the interpretation needs care.</p></aside>
+        <div><h2 id="cii-limits-title">Model and tracer boundaries</h2><div class="caveat-panel"><h3>Interpretive boundaries</h3><ul><li>The carbon ionisation state is calculated in equilibrium after the simulation, and individual photodissociation regions are not resolved.</li><li>Self-absorption can reduce [C II] luminosity by factors of two to five in the most massive systems. It is modelled alongside obscuration by the cosmic microwave background, but both treatments introduce assumptions.</li><li>The line's insensitivity to hot, fast gas is a physical selection effect rather than a numerical accident. [C II] cannot independently yield a complete wind census.</li><li>Disc fractions and onset times shift with the adopted kinematic classifier, while the 10 h<sup>−1</sup> cMpc volume does not sample the most massive galaxies where AGN may become important.</li></ul></div></div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="cii-resources-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">08 · Paper</p><p>Primary record and related projects.</p></aside>
+        <div><h2 id="cii-resources-title">Read and continue</h2><div class="resource-list"><a class="resource-link" href="https://ui.adsabs.harvard.edu/abs/2026arXiv260418731B/abstract" target="_blank" rel="noopener"><span>NASA ADS record</span><span aria-hidden="true">↗</span></a><a class="resource-link" href="https://arxiv.org/abs/2604.18731" target="_blank" rel="noopener"><span>Open arXiv version</span><span aria-hidden="true">↗</span></a><a class="resource-link" href="project-oiii-emission.html"><span>Compare: [O III] emission</span><span aria-hidden="true">→</span></a><a class="resource-link" href="publications.html"><span>All SPICE publications</span><span aria-hidden="true">→</span></a></div></div>
+      </div>
+    </section>
+    <section class="project-data-footer shell reveal" aria-label="Data availability">
+      <div class="project-data-note">
+        <div><p class="kicker">Data availability</p><h2>Paper-linked public data are planned.</h2></div>
+        <div><p>The team intends to release documented derived products associated with this study. When a collection is ready, the Data index will provide its files, version, licence, documentation, and preferred citation. No public release is advertised yet.</p><a class="text-link" href="data.html">Track planned releases <span aria-hidden="true">→</span></a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-grid"><div><a class="brand" href="index.html">SPICE</a><p>Radiation-hydrodynamics simulations of stellar feedback, the first galaxies, and cosmic reionisation.</p></div><div class="footer-links"><a href="index.html#projects">All projects</a><a href="simulations.html">Project description</a><a href="publications.html">Publications</a></div></div></footer>
+  <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
+</body>
+</html>

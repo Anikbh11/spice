@@ -1,154 +1,423 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simulations — SPICE</title>
-<style>
-/* ── Exact tokens from main page ── */
-:root{
-  --bg:#f4f1ea;
-  --ink:#1a1816;
-  --muted:#7a7368;
-  --accent:#8c7c69;
-  --line:rgba(0,0,0,0.08);
-  --radius:12px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.72;text-align:justify}
-h1,h2,h3,h4{font-family:Georgia,serif;font-weight:500;letter-spacing:-0.02em;margin-top:0}
-a{color:inherit;text-decoration:none}
-.container{max-width:1200px;margin:auto;padding:4rem}
-
-/* ── Nav — identical to main page ── */
-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:5rem}
-nav .logo{font-family:Georgia,serif;font-size:1.4rem}
-nav .links a{margin-left:1.5rem;color:var(--muted);font-size:.9rem}
-nav .links a:hover{color:var(--ink)}
-
-.section{margin-bottom:6rem}
-.section h2{font-size:2.2rem;margin-bottom:1.8rem}
-
-.fade-in{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
-
-/* ── Table — tokens updated, otherwise preserved ── */
-.styled-table{
-  width:100%;
-  max-width:700px;
-  margin:2rem 0;
-  border-collapse:collapse;
-  border:1px solid rgba(0,0,0,0.15);
-  border-radius:var(--radius);
-  overflow:hidden;
-}
-.styled-table th{
-  font-family:Georgia,serif;
-  font-weight:500;
-  font-size:.85rem;
-  color:var(--muted);
-  text-align:left;
-  padding:.8rem 1rem;
-  border-bottom:1px solid rgba(0,0,0,0.15);
-  border-right:1px solid rgba(0,0,0,0.08);
-  background:rgba(0,0,0,0.03);
-}
-.styled-table th:last-child{border-right:none}
-.styled-table td{
-  padding:.8rem 1rem;
-  border-bottom:1px solid rgba(0,0,0,0.08);
-  border-right:1px solid rgba(0,0,0,0.08);
-  color:var(--muted);
-  font-size:.92rem;
-  vertical-align:top;
-}
-.styled-table td:last-child{border-right:none}
-.styled-table tr:last-child td{border-bottom:none}
-
-/* ── Scroll-to-top — identical to main page ── */
-#scroll-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--bg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .3s ease,transform .3s ease,background .2s ease;z-index:999}
-#scroll-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
-#scroll-top:hover{background:var(--accent)}
-#scroll-top svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-@media(max-width:900px){
-  .container{padding:2rem}
-  nav{margin-bottom:3rem}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A detailed description of the scientific design, physical model, and numerical methods behind the SPICE radiation-hydrodynamics simulations.">
+  <meta name="theme-color" content="#f3f0e9">
+  <link rel="canonical" href="https://anikbh11.github.io/spice/simulations.html">
+  <title>Project description | SPICE</title>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
 </head>
-<body>
+<body class="project-description-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="shell site-header-inner">
+      <a class="brand" href="index.html" aria-label="SPICE homepage">SPICE <small>Simulation suite</small></a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="simulations.html" aria-current="page">Project description</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="data.html">Data</a>
+        <a href="images.html">Media</a>
+        <a href="index.html#people">People</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<button id="scroll-top" aria-label="Scroll to top">
-  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
+  <main id="main">
+    <header class="page-hero shell reveal">
+      <div class="page-hero-grid">
+        <div class="project-hero-copy">
+          <p class="eyebrow">Project description · Model and numerics</p>
+          <h1>How SPICE works</h1>
+          <p>SPICE is a controlled experiment in galaxy formation and cosmic reionisation. Three radiation-hydrodynamics simulations begin from the same density field and use the same cosmology, resolution, thermochemistry, star-formation model, stellar populations, radiation transport, and feedback-coupling algorithm. Only the timing and energy distribution of supernova explosions change.</p>
+          <p class="project-hero-note">Following corresponding haloes across the three runs lets us trace that single change from star-forming gas, through galaxy structure and photon escape, to the ionisation state of the intergalactic medium.</p>
+        </div>
+      </div>
+      <div class="paper-meta-strip" aria-label="Simulation overview">
+        <div><strong>Code</strong><span>RAMSES-RT</span></div>
+        <div><strong>Volume</strong><span>(10 cMpc/<i>h</i>)³</span></div>
+        <div><strong>Finest scale at <i>z</i> = 5</strong><span>≈ 28 physical pc</span></div>
+        <div><strong>Reference</strong><span>Bhagwat et al. (2024)</span></div>
+      </div>
+      <nav class="project-jump-nav" aria-label="Project description sections">
+        <a href="#experiment-title"><span>01</span>Experiment</a>
+        <a href="#framework-title"><span>02</span>Numerics</a>
+        <a href="#baryons-title"><span>03</span>Galaxy model</a>
+        <a href="#feedback-title"><span>04</span>Feedback</a>
+        <a href="#radiation-title"><span>05</span>Radiation</a>
+        <a href="#comparison-title"><span>06</span>Outcome</a>
+        <a href="#catalogues-title"><span>07</span>Limits</a>
+      </nav>
+    </header>
 
-<div class="container">
-  <nav>
-    <div class="left"><a href="index.html">← SPICE HOMEPAGE</a></div>
-  </nav>
+    <section class="content-section shell" aria-labelledby="experiment-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">01 · Scientific design</p><p>The controlled comparison.</p></aside>
+        <div>
+          <div class="prose">
+            <h2 id="experiment-title">Matched initial conditions, different supernova models</h2>
+            <p class="lead">The experiment asks whether identical haloes can develop different star-formation histories, internal structures, and reionisation environments solely because supernova energy is delivered differently.</p>
+            <p>Supernovae return mass, metals, thermal energy, and radial momentum to the interstellar medium. The response is non-linear: explosions that occur close together can overlap before their remnants cool, building a hot volume-filling phase and coherent outflows. More widely separated events act on gas that has had time to cool, collapse, or refill evacuated regions.</p>
+            <p>This changes both parts of the escaping ionising emissivity. Feedback regulates the young stars that produce Lyman-continuum photons and restructures the neutral gas that determines how many of those photons escape. The same process redistributes metals and angular momentum, linking reionisation to galaxy morphology, dust attenuation, and line emission.</p>
+            <p>Because the remaining physics and numerics are held fixed, differences between matched haloes can be read as the response to the adopted supernova timing and energy distribution, within the assumptions of the common galaxy-formation model.</p>
+          </div>
+          <div class="method-grid" aria-label="Scientific design summary">
+            <article class="method-card"><span class="card-index">Held fixed</span><h3>Initial conditions and galaxy model</h3><p>Corresponding haloes form from the same phases and amplitudes in the initial density field. Cosmology, volume, refinement, hydrodynamics, thermochemistry, subgrid turbulence, star formation, stellar spectra, and radiation transport are shared.</p></article>
+            <article class="method-card"><span class="card-index">Changed</span><h3>Supernova timing and energy</h3><p>Bursty-SN synchronises explosions at 10 Myr, Smooth-SN samples delay times from 3 to 40 Myr, and Hyper-SN adds a metallicity-dependent 10<sup>52</sup> erg channel to the distributed timing model.</p></article>
+            <article class="method-card"><span class="card-index">Compared</span><h3>Galaxies and ionised gas</h3><p>The analysis follows star-formation duty cycles, gas and stellar kinematics, metal transport, outflows, ionising-photon production and escape, synthetic observables, and the growth and overlap of ionised regions.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section class="section fade-in">
-    <h2>Simulations</h2>
+    <section class="content-section shell" aria-labelledby="framework-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">02 · Numerical framework</p><p>From cosmological initial conditions to adaptive meshes.</p></aside>
+        <div>
+          <div class="prose">
+            <h2 id="framework-title">A cosmological radiation-hydrodynamics calculation</h2>
+            <p class="lead">RAMSES-RT evolves dark matter, gas, stars, and radiation together on an adaptive mesh.</p>
+            <p>The initial conditions are generated at <i>z</i> = 30 with MUSIC2-monofonIC, using second-order perturbation theory and a fixed-amplitude method. The periodic volume is 10 cMpc/<i>h</i> on a side and contains 512³ dark-matter particles.</p>
+          </div>
+          <div class="method-grid" aria-label="Core numerical methods">
+            <article class="method-card"><span class="card-index">Hydrodynamics</span><h3>Gas dynamics</h3><p>A second-order MUSCL–Hancock Godunov scheme uses an HLLC Riemann solver, a MinMod slope limiter, and an ideal-gas adiabatic index of 5/3.</p></article>
+            <article class="method-card"><span class="card-index">Gravity</span><h3>Dark matter, gas, and stars</h3><p>RAMSES solves self-gravity for the gas and collisionless particles. Haloes and galaxies are identified with AdaptaHOP.</p></article>
+            <article class="method-card"><span class="card-index">Refinement</span><h3>Adaptive mesh</h3><p>Cells refine when their mass exceeds the quasi-Lagrangian criterion or when the local Jeans length would span fewer than eight cells.</p></article>
+          </div>
+          <details class="technical-disclosure">
+            <summary><span>Numerical reference</span><strong>Initial conditions and resolution</strong><small>Cosmology, particle sampling, AMR levels, and physical cell size.</small></summary>
+            <div class="technical-disclosure-body">
+              <div class="table-wrap">
+                <table class="spec-table">
+                  <caption>Initial conditions and resolution</caption>
+                  <tbody>
+                    <tr><td>Cosmology</td><td>Ω<sub>Λ</sub> = 0.6901, Ω<sub>m</sub> = 0.3099, Ω<sub>b</sub> = 0.0489, <i>H</i><sub>0</sub> = 67.74 km s<sup>−1</sup> Mpc<sup>−1</sup>, <i>n</i><sub>s</sub> = 0.9682, σ<sub>8</sub> = 0.8159</td></tr>
+                    <tr><td>Primordial composition</td><td>Hydrogen mass fraction <i>X</i> = 0.7545; helium mass fraction <i>Y</i> = 0.2455</td></tr>
+                    <tr><td>Dark-matter sampling</td><td>512³ particles with mean particle mass 6.38 × 10<sup>5</sup> M<sub>⊙</sub></td></tr>
+                    <tr><td>AMR levels</td><td>ℓ = 9–16, corresponding to constant comoving resolution</td></tr>
+                    <tr><td>Physical cell size</td><td>≈ 28 pc on the finest level and 4.8 kpc on the coarsest level at <i>z</i> = 5; the finest cells are ≈ 10.7 pc at <i>z</i> = 20</td></tr>
+                    <tr><td>Minimum stellar-particle mass</td><td>970 M<sub>⊙</sub></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
 
-    <p style="max-width:100%; color:var(--muted);">
-      The SPICE simulation suite was run using the adaptive mesh refinement code RAMSES-RT in a box of length 10 cMpc/<i>h</i>. ADD INFORMATION
-      See <a href="https://ui.adsabs.harvard.edu/abs/2024MNRAS.531.3406B/abstract" target="_blank" style="color:var(--accent);border-bottom:1px solid transparent;transition:.2s ease;" onmouseover="this.style.borderBottomColor='var(--accent)'" onmouseout="this.style.borderBottomColor='transparent'"><i>Bhagwat et al. (2024)</i></a> for more details.
-      <br><br>
-      The SN feedback models explored are the following:
-    </p>
-    <table class="styled-table">
-      <thead>
-        <tr>
-          <th><b>MODEL</b></th>
-          <th><b>EXPLOSION TIME</b></th>
-          <th><b>EXPLOSION ENERGY</b></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><b>Bursty-SN</b></td>
-          <td>All SN in a stellar particle explode at 10 Myr</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><b>Smooth-SN</b></td>
-          <td>Row 2, B</td>
-          <td>Row 2, C</td>
-        </tr>
-        <tr>
-          <td><b>Hyper-SN</b></td>
-          <td>Row 3, B</td>
-          <td>Row 3, C</td>
-        </tr>
-        <tr>
-          <td>Row 4, A</td>
-          <td>Row 4, B</td>
-          <td>Row 4, C</td>
-        </tr>
-      </tbody>
-    </table>
+    <section class="content-section shell" aria-labelledby="baryons-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">03 · Galaxy formation model</p><p>Cooling, star formation, radiation, and feedback.</p></aside>
+        <div>
+          <div class="prose">
+            <h2 id="baryons-title">Baryonic physics and the star-formation cycle</h2>
+            <p class="lead">The galaxy model combines non-equilibrium thermochemistry, adaptive hydrodynamics, unresolved turbulent energy, star-particle formation, stellar spectra, radiation transport, and mechanical supernova feedback.</p>
+            <p>Dark matter builds the gravitational potential. Gas enters haloes through filaments and mergers, is shock heated, and cools into the interstellar medium. Hydrogen and helium ionisation states are evolved out of equilibrium and coupled to the local radiation field. Metal-line cooling is tabulated above 10<sup>4</sup> K; fine-structure cooling allows enriched gas to cool to about 300 K.</p>
+            <p>The mesh resolves structures down to tens of parsecs, but not individual star-forming clouds or all stages of a supernova remnant. Unresolved density fluctuations, turbulent support, star formation, and remnant evolution are represented by local subgrid prescriptions. Galaxy morphology and star-formation history are not imposed.</p>
+          </div>
 
-  </section>
-</div>
+          <details class="technical-disclosure process-disclosure">
+            <summary><span>Model sequence</span><strong>From gas supply to photon escape</strong><small>Follow the six-stage baryon cycle used in SPICE.</small></summary>
+            <div class="technical-disclosure-body">
+              <ol class="galaxy-model-flow" aria-label="Galaxy formation sequence in SPICE">
+                <li><span>01</span><h3>Halo growth and gas supply</h3><p>Dark-matter haloes grow through mergers and smooth accretion. Filaments supply gas and angular momentum.</p></li>
+                <li><span>02</span><h3>Cooling and phase structure</h3><p>Non-equilibrium H/He chemistry, photoheating, collisional processes, Compton exchange, and metal cooling determine the gas temperature and ionisation state.</p></li>
+                <li><span>03</span><h3>Mesh refinement</h3><p>Mass and Jeans-length criteria refine collapsing regions. The Jeans length is kept across at least eight cells until the maximum refinement level is reached.</p></li>
+                <li><span>04</span><h3>Star formation</h3><p>Gas with <i>n</i><sub>H</sub> ≥ 10 cm<sup>−3</sup> follows a multi-freefall Schmidt law. The local efficiency depends on turbulent Mach number and virial parameter.</p></li>
+                <li><span>05</span><h3>Stellar particles</h3><p>Star particles are sampled in multiples of 970 M<sub>⊙</sub>. Each represents a coeval population with a Chabrier IMF and BPASS v2.2.1 spectra.</p></li>
+                <li><span>06</span><h3>Radiation and supernovae</h3><p>Stellar particles emit photons and later return momentum, energy, mass, and metals. The response of the gas regulates subsequent star formation and photon escape.</p></li>
+              </ol>
+            </div>
+          </details>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const items = document.querySelectorAll(".fade-in");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add("visible"); });
-  }, { threshold: 0.15 });
-  items.forEach(item => observer.observe(item));
-});
+          <details class="technical-disclosure model-disclosure">
+            <summary><span>Technical depth</span><strong>Star formation, turbulence, and subgrid terms</strong><small>Equations, evolved fields, and model parameters.</small></summary>
+            <div class="technical-disclosure-body">
+              <section class="equation-ledger" aria-labelledby="equations-title">
+            <header class="equation-ledger-header">
+              <p class="kicker">Selected governing prescriptions</p>
+              <h3 id="equations-title">Star formation below the grid scale</h3>
+              <p>These relations connect cell density and velocity structure to the local star-formation rate. Notation follows Bhagwat et al. (2024); equation numbers are local to this page.</p>
+            </header>
 
-const scrollBtn = document.getElementById("scroll-top");
-window.addEventListener("scroll", () => {
-  scrollBtn.classList.toggle("visible", window.scrollY > 400);
-});
-scrollBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-</script>
+            <article class="equation-entry">
+              <div class="equation-context"><span>01</span><h4>Local Schmidt law</h4><p>Eligible gas forms stars with a variable efficiency per free-fall time.</p></div>
+              <div>
+                <div class="equation-display">
+                  <math display="block" aria-label="rho dot star equals epsilon sub ff times rho divided by t sub ff; t sub ff equals the square root of three pi divided by thirty-two G rho">
+                    <mrow>
+                      <msub><mover accent="true"><mi>ρ</mi><mo>˙</mo></mover><mo>∗</mo></msub>
+                      <mo>=</mo>
+                      <msub><mi>ε</mi><mi mathvariant="normal">ff</mi></msub>
+                      <mfrac><mi>ρ</mi><msub><mi>t</mi><mi mathvariant="normal">ff</mi></msub></mfrac>
+                      <mspace width="1.5em"></mspace><mtext>with</mtext><mspace width="0.5em"></mspace>
+                      <msub><mi>t</mi><mi mathvariant="normal">ff</mi></msub>
+                      <mo>=</mo>
+                      <msqrt><mfrac><mrow><mn>3</mn><mi>π</mi></mrow><mrow><mn>32</mn><mi>G</mi><mi>ρ</mi></mrow></mfrac></msqrt>
+                    </mrow>
+                  </math>
+                  <span class="equation-number" aria-hidden="true">(1)</span>
+                </div>
+                <p class="equation-definitions">Here ρ is the cell gas density. The efficiency ε<sub>ff</sub> is calculated from the collapsing fraction of the unresolved density distribution.</p>
+              </div>
+            </article>
+
+            <article class="equation-entry">
+              <div class="equation-context"><span>02</span><h4>Multi-freefall efficiency</h4><p>A lognormal subgrid density distribution sets ε<sub>ff</sub> from turbulent compression and gravitational boundedness.</p></div>
+              <div>
+                <div class="equation-display equation-display-long">
+                  <math display="block" aria-label="epsilon sub ff equals epsilon divided by two phi times exponential of three sigma sub s squared over eight, times one plus the error function of sigma sub s squared minus s critical divided by the square root of two sigma sub s squared">
+                    <mrow>
+                      <msub><mi>ε</mi><mi mathvariant="normal">ff</mi></msub><mo>=</mo>
+                      <mfrac><mi>ε</mi><mrow><mn>2</mn><mi>φ</mi></mrow></mfrac>
+                      <mi mathvariant="normal">exp</mi><mo>(</mo><mfrac><mn>3</mn><mn>8</mn></mfrac><msubsup><mi>σ</mi><mi>s</mi><mn>2</mn></msubsup><mo>)</mo>
+                      <mo>[</mo><mn>1</mn><mo>+</mo><mi mathvariant="normal">erf</mi><mo>(</mo>
+                      <mfrac>
+                        <mrow><msubsup><mi>σ</mi><mi>s</mi><mn>2</mn></msubsup><mo>−</mo><msub><mi>s</mi><mi mathvariant="normal">crit</mi></msub></mrow>
+                        <msqrt><mrow><mn>2</mn><msubsup><mi>σ</mi><mi>s</mi><mn>2</mn></msubsup></mrow></msqrt>
+                      </mfrac>
+                      <mo>)</mo><mo>]</mo>
+                    </mrow>
+                  </math>
+                  <span class="equation-number" aria-hidden="true">(2)</span>
+                </div>
+                <div class="equation-display equation-display-secondary">
+                  <math display="block" aria-label="s critical equals natural logarithm of alpha virial times one plus two Mach number to the fourth divided by one plus Mach number squared; alpha virial equals five sigma squared divided by three G rho delta x squared; Mach number equals sigma divided by sound speed">
+                    <mtable rowspacing="0.6em" columnalign="left">
+                      <mtr><mtd><mrow>
+                        <msub><mi>s</mi><mi mathvariant="normal">crit</mi></msub><mo>=</mo><mi mathvariant="normal">ln</mi><mo>[</mo>
+                        <msub><mi>α</mi><mi mathvariant="normal">vir</mi></msub>
+                        <mo>(</mo><mn>1</mn><mo>+</mo><mfrac><mrow><mn>2</mn><msup><mi>ℳ</mi><mn>4</mn></msup></mrow><mrow><mn>1</mn><mo>+</mo><msup><mi>ℳ</mi><mn>2</mn></msup></mrow></mfrac><mo>)</mo><mo>]</mo>
+                      </mrow></mtd></mtr>
+                      <mtr><mtd><mrow>
+                        <msub><mi>α</mi><mi mathvariant="normal">vir</mi></msub><mo>=</mo><mfrac><mrow><mn>5</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow><mrow><mn>3</mn><mi>G</mi><mi>ρ</mi><msup><mrow><mi>Δ</mi><mi>x</mi></mrow><mn>2</mn></msup></mrow></mfrac>
+                        <mspace width="1.5em"></mspace><mi>ℳ</mi><mo>=</mo><mfrac><mi>σ</mi><msub><mi>c</mi><mi>s</mi></msub></mfrac>
+                      </mrow></mtd></mtr>
+                    </mtable>
+                  </math>
+                  <span class="equation-number" aria-hidden="true">(3)</span>
+                </div>
+                <p class="equation-definitions">SPICE adopts ε = 0.5 and φ = 1/0.49. The formulation admits collapse in globally unstable subsonic cells (α<sub>vir</sub> &lt; 1) and in overdense fluctuations generated by supersonic turbulence.</p>
+              </div>
+            </article>
+
+            <article class="equation-entry">
+              <div class="equation-context"><span>03</span><h4>Unresolved turbulent energy</h4><p>The subgrid turbulent energy is advected and evolves through production, compression, and dissipation.</p></div>
+              <div>
+                <div class="equation-display equation-display-long">
+                  <math display="block" aria-label="partial K sub T over partial t plus partial of K sub T v tilde sub j over partial x sub j plus P sub T partial v tilde sub j over partial x sub j equals C sub T minus D sub T">
+                    <mrow>
+                      <mfrac><mrow><mo>∂</mo><msub><mi>K</mi><mi>T</mi></msub></mrow><mrow><mo>∂</mo><mi>t</mi></mrow></mfrac><mo>+</mo>
+                      <mfrac><mrow><mo>∂</mo><mo>(</mo><msub><mi>K</mi><mi>T</mi></msub><msub><mover accent="true"><mi>v</mi><mo>˜</mo></mover><mi>j</mi></msub><mo>)</mo></mrow><mrow><mo>∂</mo><msub><mi>x</mi><mi>j</mi></msub></mrow></mfrac><mo>+</mo>
+                      <msub><mi>P</mi><mi>T</mi></msub><mfrac><mrow><mo>∂</mo><msub><mover accent="true"><mi>v</mi><mo>˜</mo></mover><mi>j</mi></msub></mrow><mrow><mo>∂</mo><msub><mi>x</mi><mi>j</mi></msub></mrow></mfrac>
+                      <mo>=</mo><msub><mi>C</mi><mi>T</mi></msub><mo>−</mo><msub><mi>D</mi><mi>T</mi></msub>
+                    </mrow>
+                  </math>
+                  <span class="equation-number" aria-hidden="true">(4)</span>
+                </div>
+                <div class="equation-display equation-display-secondary">
+                  <math display="block" aria-label="K sub T equals three halves rho sigma sub T squared; P sub T equals two thirds K sub T; D sub T equals K sub T divided by tau dissipation">
+                    <mrow>
+                      <msub><mi>K</mi><mi>T</mi></msub><mo>=</mo><mfrac><mn>3</mn><mn>2</mn></mfrac><mi>ρ</mi><msubsup><mi>σ</mi><mi>T</mi><mn>2</mn></msubsup>
+                      <mspace width="1.5em"></mspace><msub><mi>P</mi><mi>T</mi></msub><mo>=</mo><mfrac><mn>2</mn><mn>3</mn></mfrac><msub><mi>K</mi><mi>T</mi></msub>
+                      <mspace width="1.5em"></mspace><msub><mi>D</mi><mi>T</mi></msub><mo>=</mo><mfrac><msub><mi>K</mi><mi>T</mi></msub><msub><mi>τ</mi><mi mathvariant="normal">diss</mi></msub></mfrac>
+                    </mrow>
+                  </math>
+                  <span class="equation-number" aria-hidden="true">(5)</span>
+                </div>
+                <p class="equation-definitions"><i>C</i><sub>T</sub> is production by the resolved velocity shear and <i>D</i><sub>T</sub> is dissipation on a cell-crossing timescale. The resulting σ enters both ℳ and α<sub>vir</sub>, closing the star-formation model.</p>
+              </div>
+            </article>
+          </section>
+
+          <div class="model-boundary" aria-labelledby="model-boundary-title">
+            <h3 id="model-boundary-title">Resolved fields and subgrid terms</h3>
+            <dl>
+              <div><dt>Evolved on the mesh</dt><dd>Gravity, gas dynamics, mesh refinement, radiation transport, H/He ionisation, radiative heating and cooling, and the motion of dark-matter and stellar particles.</dd></div>
+              <div><dt>Modelled below the cell scale</dt><dd>The density distribution of star-forming gas, unresolved turbulent energy, conversion of gas into stellar populations, unresolved remnant evolution, and dust abundance.</dd></div>
+              <div><dt>Changed between runs</dt><dd>The timing and energy of supernova explosions. The remaining model choices are kept fixed.</dd></div>
+            </dl>
+          </div>
+
+          <div class="table-wrap">
+            <table class="spec-table">
+              <caption>Interstellar-medium model</caption>
+              <tbody>
+                <tr><td>Initial mass function</td><td>Chabrier (2003)</td></tr>
+                <tr><td>Stellar-particle interpretation</td><td>A coeval stellar population with a minimum initial particle mass of 970 M<sub>⊙</sub></td></tr>
+                <tr><td>Star-formation threshold</td><td>Hydrogen number density <i>n</i><sub>H</sub> ≥ 10 cm<sup>−3</sup></td></tr>
+                <tr><td>Efficiency model</td><td>Multi-freefall prescription controlled locally by turbulent Mach number and virial parameter</td></tr>
+                <tr><td>Subgrid turbulence</td><td>Non-equilibrium turbulent kinetic energy with advection, production, pressure work, and dissipation</td></tr>
+                <tr><td>Metallicity floor</td><td>3.2 × 10<sup>−4</sup> Z<sub>⊙</sub>, representing unresolved molecular cooling and early Population III enrichment</td></tr>
+                <tr><td>Cooling floor</td><td>Approximately 300 K through low-temperature metal fine-structure cooling</td></tr>
+              </tbody>
+            </table>
+          </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="feedback-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">04 · Stellar feedback</p><p>The controlled variable in the flagship suite.</p></aside>
+        <div>
+          <div class="prose">
+            <h2 id="feedback-title">Three ways to deliver supernova energy</h2>
+            <p class="lead">All three runs use the same mechanical coupling scheme. The explosion times and event energies differ.</p>
+            <p>The mechanical scheme distributes ejecta mass, metals, thermal energy, and radial momentum over the host cell and its 48 neighbours. For each coupling direction, the swept-to-ejecta mass ratio χ is compared with a density-, energy-, and metallicity-dependent transition χ<sub>tr</sub>. If the Sedov–Taylor phase is resolved, the energy-conserving momentum is injected; otherwise the algorithm supplies the asymptotic snowplough momentum, avoiding numerical overcooling of an unresolved remnant.</p>
+            <p>A Chabrier IMF gives 0.01639 core-collapse supernovae per solar mass, or 15 events for a minimum-mass stellar particle. The recycled mass fraction is η<sub>SN</sub> = 0.31, of which 5% is assigned to newly synthesised metals.</p>
+          </div>
+          <div class="feedback-model-rail" aria-label="Three SPICE feedback models">
+            <article class="bursty"><span>Bursty-SN</span><strong>One coherent event at 10 Myr</strong><p>Every supernova from a stellar particle occurs at once, with 2 × 10<sup>51</sup> erg assigned to each event.</p></article>
+            <article class="smooth"><span>Smooth-SN</span><strong>Events distributed from 3 to 40 Myr</strong><p>The same energy is delivered event by event, with delay times drawn from the STARBURST99 supernova rate.</p></article>
+            <article class="hyper"><span>Hyper-SN</span><strong>Distributed timing, variable energy</strong><p>Ordinary events span 10<sup>50</sup>–2 × 10<sup>51</sup> erg, while a metallicity-dependent fraction reach 10<sup>52</sup> erg.</p></article>
+          </div>
+          <details class="technical-disclosure feedback-disclosure">
+            <summary><span>Mechanical feedback</span><strong>Resolution-aware coupling and run parameters</strong><small>Momentum transition, hypernova fraction, and the complete prescription table.</small></summary>
+            <div class="technical-disclosure-body">
+              <div class="feedback-formalism" aria-label="Mechanical-feedback equations">
+            <div>
+              <p class="kicker">Resolution-aware coupling</p>
+              <div class="equation-display equation-display-long">
+                <math display="block" aria-label="chi transition equals sixty-nine point five eight times n sub H to the minus four seventeenths times E sub fifty-one to the minus two seventeenths times Z prime to the minus zero point two eight">
+                  <mrow>
+                    <msub><mi>χ</mi><mi mathvariant="normal">tr</mi></msub><mo>=</mo><mn>69.58</mn>
+                    <msubsup><mi>n</mi><mi>H</mi><mrow><mo>−</mo><mfrac><mn>4</mn><mn>17</mn></mfrac></mrow></msubsup>
+                    <msubsup><mi>E</mi><mn>51</mn><mrow><mo>−</mo><mfrac><mn>2</mn><mn>17</mn></mfrac></mrow></msubsup>
+                    <msup><msup><mi>Z</mi><mo>′</mo></msup><mrow><mo>−</mo><mn>0.28</mn></mrow></msup>
+                  </mrow>
+                </math>
+                <span class="equation-number" aria-hidden="true">(6)</span>
+              </div>
+              <p><i>Z</i>′ = max(0.01, <i>Z</i>/<i>Z</i><sub>⊙</sub>). The switch selects the resolved adiabatic solution for χ &lt; χ<sub>tr</sub> and the terminal-momentum solution for χ ≥ χ<sub>tr</sub>.</p>
+            </div>
+            <div>
+              <p class="kicker">Metallicity-dependent channel</p>
+              <div class="equation-display">
+                <math display="block" aria-label="f sub H N equals the maximum of zero point five times exponential of minus Z star over zero point zero zero one, and zero point zero one">
+                  <mrow>
+                    <msub><mi>f</mi><mi mathvariant="normal">HN</mi></msub><mo>(</mo><msub><mi>Z</mi><mo>∗</mo></msub><mo>)</mo><mo>=</mo>
+                    <mi mathvariant="normal">max</mi><mo>[</mo><mn>0.5</mn><mi mathvariant="normal">exp</mi><mo>(</mo><mo>−</mo><mfrac><msub><mi>Z</mi><mo>∗</mo></msub><mn>0.001</mn></mfrac><mo>)</mo><mo>,</mo><mn>0.01</mn><mo>]</mo>
+                  </mrow>
+                </math>
+                <span class="equation-number" aria-hidden="true">(7)</span>
+              </div>
+              <p>In the Hyper-SN run, the hypernova fraction is 50% for metal-free populations and approaches a 1% floor at higher stellar metallicity.</p>
+            </div>
+              </div>
+              <div class="table-wrap">
+                <table class="spec-table feedback-table">
+                  <caption>Flagship feedback prescriptions</caption>
+                  <thead><tr><th>Model</th><th>Explosion timing</th><th>Energy per event</th><th>Progenitor mass</th></tr></thead>
+                  <tbody>
+                    <tr><td>Bursty-SN</td><td>All supernovae from a stellar particle occur together at an age of 10 Myr.</td><td>2 × 10<sup>51</sup> erg</td><td>19.1 M<sub>⊙</sub></td></tr>
+                    <tr><td>Smooth-SN</td><td>Delay times are sampled from 3–40 Myr using the STARBURST99 supernova rate.</td><td>2 × 10<sup>51</sup> erg</td><td>19.1 M<sub>⊙</sub></td></tr>
+                    <tr><td>Hyper-SN</td><td>Delay times are sampled from 3–40 Myr; the hypernova fraction declines with stellar metallicity.</td><td>Ordinary events: distribution centred on 1.2 × 10<sup>51</sup> erg, bounded between 10<sup>50</sup> and 2 × 10<sup>51</sup> erg. Hypernovae: 10<sup>52</sup> erg.</td><td>Ordinary: 19.1 M<sub>⊙</sub>; hypernova: 30 M<sub>⊙</sub></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="radiation-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">05 · Radiation</p><p>How starlight travels through gas and dust.</p></aside>
+        <div>
+          <div class="prose">
+            <h2 id="radiation-title">Five photon groups, evolved on the fly</h2>
+            <p class="lead">RAMSES-RT transports radiation alongside the gas, allowing ionising photons and radiation pressure to respond to the evolving galaxies.</p>
+            <p>Radiation is solved with a first-order Godunov method, M1 moment closure, and a Global Lax–Friedrichs flux. Stellar luminosities and spectra depend on particle age, mass, and metallicity and are taken from BPASS v2.2.1 for a Chabrier initial mass function.</p>
+            <p>The model includes direct radiation pressure and multi-scattering infrared pressure on dust. Dust abundance scales with gas metallicity and neutral fraction. Transport adopts a reduced speed of light of 0.1<i>c</i> for computational tractability, while radiation-pressure forces use the full speed of light; up to 500 radiation subcycles may be taken within one hydrodynamic step.</p>
+          </div>
+          <details class="technical-disclosure">
+            <summary><span>Radiation groups</span><strong>Photon energies and physical roles</strong><small>Five bands from infrared to He II-ionising ultraviolet.</small></summary>
+            <div class="technical-disclosure-body">
+              <div class="table-wrap">
+                <table class="spec-table radiation-table">
+                  <caption>Radiation groups</caption>
+                  <thead><tr><th>Group</th><th>Energy interval</th><th>Mean photon energy</th><th>Primary role</th></tr></thead>
+                  <tbody>
+                    <tr><td>Infrared</td><td>0.1–1 eV</td><td>0.61 eV</td><td>Dust reprocessing and multi-scattered radiation pressure</td></tr>
+                    <tr><td>Optical</td><td>1–13.6 eV</td><td>5.51 eV</td><td>Non-ionising stellar radiation and dust coupling</td></tr>
+                    <tr><td>UV I</td><td>13.6–24.59 eV</td><td>17.90 eV</td><td>Hydrogen-ionising radiation</td></tr>
+                    <tr><td>UV II</td><td>24.59–54.42 eV</td><td>32.32 eV</td><td>Hydrogen and neutral-helium ionisation</td></tr>
+                    <tr><td>UV III</td><td>&gt; 54.42 eV</td><td>67.77 eV</td><td>Ionisation of hydrogen and both helium stages</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="comparison-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">06 · Model imprint</p><p>The same cosmic structure under different feedback.</p></aside>
+        <div>
+          <div class="prose">
+            <h2 id="comparison-title">Thermal and chemical structure at <i>z</i> = 5</h2>
+            <p class="lead">The three runs produce different gas-temperature and metallicity distributions by the final snapshot.</p>
+          </div>
+
+          <figure class="comparison-figure project-comparison-figure">
+            <div class="comparison-matrix" aria-label="Temperature and metallicity comparison across three feedback models">
+              <article class="model-slice"><h3>Bursty-SN</h3><div class="model-channel"><span>Temperature</span><img src="assets/images/models/bursty-temperature.jpg" width="1386" height="565" loading="lazy" alt="Gas temperature in the Bursty-SN simulation at redshift five."></div><div class="model-channel"><span>Metallicity</span><img src="assets/images/models/bursty-metallicity.jpg" width="1386" height="565" loading="lazy" alt="Gas-phase metallicity in the Bursty-SN simulation at redshift five."></div></article>
+              <article class="model-slice"><h3>Smooth-SN</h3><div class="model-channel"><span>Temperature</span><img src="assets/images/models/smooth-temperature.jpg" width="1386" height="565" loading="lazy" alt="Gas temperature in the Smooth-SN simulation at redshift five."></div><div class="model-channel"><span>Metallicity</span><img src="assets/images/models/smooth-metallicity.jpg" width="1386" height="565" loading="lazy" alt="Gas-phase metallicity in the Smooth-SN simulation at redshift five."></div></article>
+              <article class="model-slice"><h3>Hyper-SN</h3><div class="model-channel"><span>Temperature</span><img src="assets/images/models/hyper-temperature.jpg" width="1386" height="565" loading="lazy" alt="Gas temperature in the Hyper-SN simulation at redshift five."></div><div class="model-channel"><span>Metallicity</span><img src="assets/images/models/hyper-metallicity.jpg" width="1386" height="565" loading="lazy" alt="Gas-phase metallicity in the Hyper-SN simulation at redshift five."></div></article>
+            </div>
+            <figcaption class="figure-caption"><strong>Flagship comparison.</strong> Temperature (top) and gas-phase metallicity (bottom) at <i>z</i> = 5. The projections span the simulation box in two directions and one third of the box in the other. Feedback changes both the thermal state and chemical enrichment of the large-scale structure. Figure 2 from Bhagwat et al. (2024).</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="catalogues-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">07 · Analysis and scope</p><p>What is catalogued, and how results should be read.</p></aside>
+        <div>
+          <div class="prose">
+            <h2 id="catalogues-title">Resolved structures and known limits</h2>
+            <p class="lead">The volume resolves the internal structure of early galaxies and their local ionised environments, but not every scale relevant to reionisation.</p>
+            <p>AdaptaHOP identifies haloes containing at least 100 dark-matter particles and galaxies containing at least 100 stellar particles. These catalogues support comparisons of galaxy abundance, star-formation histories, morphology, ionising-photon escape, and observable emission across the three runs.</p>
+          </div>
+          <div class="scope-grid">
+            <article class="scope-card"><h3>Finite volume</h3><p>A 10 cMpc/<i>h</i> box resolves galaxy-scale physics well, but is too small to deliver a converged cosmic-mean reionisation history or capture the largest late-time ionised regions.</p></article>
+            <article class="scope-card"><h3>Model dependence</h3><p>Star formation, unresolved turbulence, mechanical feedback, stellar spectra, and dust all rely on numerical or subgrid assumptions. The comparison measures the consequences of those choices; it does not remove them.</p></article>
+            <article class="scope-card"><h3>Radiation approximation</h3><p>The reduced speed of light is accurate while ionisation fronts remain slower than 0.1<i>c</i>, but may become limiting as fronts accelerate through voids near the end of reionisation.</p></article>
+            <article class="scope-card"><h3>Missing physics</h3><p>The flagship calculations do not include active-galactic-nucleus feedback, cosmic rays, or magnetic fields, each of which may alter the interstellar medium and galaxy observables.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="resources-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">08 · Resources</p><p>Primary sources and science built with SPICE.</p></aside>
+        <div>
+          <h2 id="resources-title">Read and explore</h2>
+          <div class="resource-list project-resource-list">
+            <a class="resource-link" href="https://arxiv.org/abs/2310.16895" target="_blank" rel="noopener"><span>Flagship paper and full methods</span><span aria-hidden="true">↗</span></a>
+            <a class="resource-link" href="https://ui.adsabs.harvard.edu/abs/2024MNRAS.531.3406B/abstract" target="_blank" rel="noopener"><span>Publication record on NASA ADS</span><span aria-hidden="true">↗</span></a>
+            <a class="resource-link" href="publications.html"><span>SPICE publication catalogue</span><span aria-hidden="true">→</span></a>
+            <a class="resource-link" href="index.html#projects"><span>Research projects</span><span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-grid"><div><a class="brand" href="index.html">SPICE</a><p>Radiation-hydrodynamics simulations of stellar feedback, the first galaxies, and cosmic reionisation.</p></div><div class="footer-links"><a href="publications.html">Publications</a><a href="images.html">Media</a><a href="https://github.com/Anikbh11/spice" target="_blank" rel="noopener">GitHub</a></div></div></footer>
+  <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
 </body>
 </html>
-  

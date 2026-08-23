@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SPICE research project: how stellar-feedback cadence connects galaxy morphology, ionising escape, and cosmic reionisation.">
+  <meta name="theme-color" content="#f3f0e9">
+  <link rel="canonical" href="https://anikbh11.github.io/spice/project-feedback-reionisation.html">
+  <title>Feedback and cosmic reionisation | SPICE</title>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body class="paper-page paper-feedback">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header"><div class="shell site-header-inner"><a class="brand" href="index.html" aria-label="SPICE homepage">SPICE <small>Simulation suite</small></a><nav class="site-nav" aria-label="Primary navigation"><a href="simulations.html">Project description</a><a href="index.html#projects" aria-current="page">Projects</a><a href="publications.html">Publications</a><a href="data.html">Data</a><a href="images.html">Media</a><a href="index.html#people">People</a><a href="contact.html">Contact</a></nav></div></header>
+
+  <main id="main">
+    <header class="page-hero shell reveal">
+      <div class="page-hero-grid">
+        <div class="paper-hero-copy">
+          <p class="eyebrow">Research project 01 · Flagship study</p>
+          <h1>Feedback and cosmic reionisation</h1>
+          <p>The foundational SPICE paper compares supernova timing, galaxy structure, ionising-photon escape, and the reionisation history within one matched set of simulations.</p>
+          <div class="paper-tags" aria-label="Research themes"><span>Radiation hydrodynamics</span><span>LyC escape</span><span>Galaxy morphology</span><span>Reionisation</span></div>
+        </div>
+        <figure class="paper-hero-visual"><img src="figure.jpeg" width="2772" height="1696" alt="Matched projections of gas temperature and metallicity in the Bursty-SN, Smooth-SN, and Hyper-SN simulations."><figcaption><strong>The feedback imprint is spatial.</strong> Matched temperature and metallicity maps show how changing supernova timing reorganises circumgalactic gas while leaving the underlying cosmological structure fixed.</figcaption></figure>
+      </div>
+      <div class="paper-meta-strip" aria-label="Paper metadata"><div><strong>First author</strong><span>Aniket Bhagwat</span></div><div><strong>Published</strong><span>MNRAS 531 · 2024</span></div><div><strong>Simulation</strong><span>Three matched volumes</span></div><div><strong>Key figure</strong><span>Reionisation history · Fig. 7</span></div></div>
+    </header>
+
+    <section class="content-section shell" aria-labelledby="question-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">01 · Overview</p><p>From stellar explosions to the intergalactic medium.</p></aside>
+        <div class="prose"><h2 id="question-title">Can feedback set the pace of reionisation?</h2><p class="lead">Producing ionising photons is not enough: those photons must escape a dense, structured interstellar medium before they can ionise the Universe.</p><p>The paper keeps the cosmology and galaxy sample fixed and changes how supernova energy is delivered. Concentrating explosions into short episodes or spreading them over tens of millions of years alters gas porosity, star-formation variability, outflows, and the ability of galaxies to settle into rotationally supported systems.</p><p>The analysis then measures star-formation histories, UV luminosity functions, galaxy kinematics, ionising emissivity, escape fractions, ionised bubbles, and the volume-weighted neutral hydrogen fraction. Some observables preserve differences between the feedback models; others become degenerate once dust is included.</p></div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="experiment-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">02 · Experiment</p><p>What is held fixed, and what is changed.</p></aside>
+        <div><h2 id="experiment-title">A controlled numerical comparison</h2><div class="method-grid">
+          <article class="method-card"><span class="card-index">Volume</span><h3>Resolve galaxies inside a cosmological box</h3><p>Each run evolves a 10 <i>h</i><sup>-1</sup> cMpc box with 512<sup>3</sup> dark-matter particles of mean mass 6.38 × 10<sup>5</sup> M<sub>⊙</sub>. Adaptive refinement reaches approximately 28 pc physical resolution at <i>z</i> = 5, with minimum stellar-particle masses near 970 M<sub>⊙</sub>.</p></article>
+          <article class="method-card"><span class="card-index">Physics</span><h3>Couple gas, stars, radiation, and dust</h3><p>RAMSES-RT follows non-equilibrium chemistry and transports radiation in infrared, optical, and three ionising UV groups. Star formation uses a turbulence-dependent multi-freefall model, while supernovae inject mass, energy, and momentum mechanically.</p></article>
+          <article class="method-card"><span class="card-index">Variable</span><h3>Change only supernova timing and energy</h3><p>Bursty-SN combines a stellar particle’s explosions at 10 Myr; Smooth-SN distributes them from 3–40 Myr; Hyper-SN adds a metallicity-dependent energetic channel. The shared initial conditions make differences directly attributable to feedback.</p></article>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="content-section shell paper-focus-section" aria-labelledby="figure-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">03 · Key plot</p><p>A global consequence of sub-galactic physics.</p></aside>
+        <div><h2 id="figure-title">Three feedback histories, three reionisation tracks</h2><figure class="paper-figure"><img src="assets/images/papers/spice-feedback-reionisation.png" width="1030" height="740" alt="Volume-weighted neutral hydrogen fraction as a function of redshift for the Bursty-SN, Smooth-SN, and Hyper-SN models, with observational constraints."><figcaption><strong>Figure 7, Bhagwat et al. (2024).</strong> The volume-weighted neutral hydrogen fraction evolves differently in the matched feedback runs. Bursty-SN completes reionisation near <i>z</i> = 5.1 within the plotted constraints; Smooth-SN and Hyper-SN remain substantially more neutral at the end of the simulations. Plot cropped from the <a href="https://arxiv.org/abs/2310.16895" target="_blank" rel="noopener">arXiv paper</a>.</figcaption></figure><div class="figure-reading" aria-label="How to read the figure">
+          <article><h3>Horizontal axis</h3><p>Cosmic time runs from high redshift on the right toward lower redshift on the left. The three curves separate well before reionisation ends.</p></article>
+          <article><h3>Vertical axis</h3><p>The logarithmic neutral fraction falls as ionised regions grow and overlap. Grey measurements and limits summarize observational constraints used in the paper.</p></article>
+          <article><h3>The surprise</h3><p>Smooth-SN and Hyper-SN produce more intrinsic ionising photons, yet reionise later. The limiting quantity is escape, not photon production alone.</p></article>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="results-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">04 · Results</p><p>The feedback signal appears differently in different observables.</p></aside>
+        <div><h2 id="results-title">Beyond the headline result</h2><div class="finding-list" style="margin-top:2rem">
+          <article class="finding-row"><span>01</span><div><h3>A main sequence is already present</h3><p>A star-forming main sequence emerges by <i>z</i> = 10. Its median is similar across the runs, but Bursty-SN adds roughly 0.3–0.5 dex more scatter than the smoother models.</p></div></article>
+          <article class="finding-row"><span>02</span><div><h3>Dust hides intrinsic differences</h3><p>Intrinsic 1500 Å luminosity functions vary substantially, including an excess of very bright galaxies in Smooth-SN and Hyper-SN. After dust attenuation, the three models become much harder to distinguish at <i>z</i> = 7 and 5.</p></div></article>
+          <article class="finding-row"><span>03</span><div><h3>Morphology retains the memory of feedback</h3><p>Smooth-SN preferentially forms massive rotation-supported systems; Bursty-SN favours disturbed, dispersion-dominated galaxies; Hyper-SN produces a mass-dependent mixture.</p></div></article>
+          <article class="finding-row"><span>04</span><div><h3>Escape follows dynamical state</h3><p>At fixed mass and across redshift, dispersion-dominated galaxies have LyC escape fractions about 10–50 times higher than rotation-dominated systems.</p></div></article>
+          <article class="finding-row"><span>05</span><div><h3>The global escape fractions diverge</h3><p>Integrated over the galaxy populations, the inferred global escape fractions are approximately 6.8%, 1.8%, and 1.5% for Bursty-SN, Smooth-SN, and Hyper-SN.</p></div></article>
+          <article class="finding-row"><span>06</span><div><h3>Photon production is comparatively similar</h3><p>The median ionising-photon production efficiency differs by only about 0.1–0.3 dex among models. The larger difference in their reionisation histories is driven mainly by ionising-photon escape.</p></div></article>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="interpretation-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">05 · Interpretation</p><p>Which observations can actually discriminate?</p></aside>
+        <div><h2 id="interpretation-title">The useful observable is a connected set, not one number</h2><div class="analysis-grid">
+          <article class="analysis-card"><h3>Galaxy morphology</h3><p>Stellar and gas kinematics provide a route to the feedback duty cycle. A population dominated by stable discs points toward gentler energy injection; disturbed systems imply more explosive histories.</p></article>
+          <article class="analysis-card"><h3>Ionised environment</h3><p>At the same intrinsic luminosity, high-escape, dispersion-dominated galaxies should create larger ionised regions. The model predicts a statistical relation between morphology, bubble size, and Lyα visibility.</p></article>
+          <article class="analysis-card"><h3>Mass contribution</h3><p>Smooth-SN receives about 46% of escaping emissivity from galaxies above 10<sup>9</sup> M<sub>⊙</sub>, while Bursty-SN and Hyper-SN distribute it more evenly over roughly 10<sup>7</sup>–10<sup>10</sup> M<sub>⊙</sub>.</p></article>
+          <article class="analysis-card"><h3>Multi-wavelength test</h3><p>JWST morphology and nebular lines, ALMA cold-gas kinematics, and MUSE Lyα observations probe different links in the same feedback–structure–escape chain.</p></article>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="content-section shell paper-conclusion-section" aria-labelledby="feedback-conclusion-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">06 · Conclusion</p><p>Feedback, photon escape, and reionisation.</p></aside>
+        <div>
+          <h2 id="feedback-conclusion-title">Feedback regulates reionisation mainly by changing escape</h2>
+          <p class="conclusion-lede">The simulations do not simply rank galaxies by how many ionising photons they make. Feedback changes the kinematic and morphological mix of the galaxy population. Dispersion-supported systems have Lyman-continuum escape fractions roughly 10–50 times those of rotation-supported systems across the redshifts studied.</p>
+          <p>The matched experiment therefore identifies a longer causal sequence: supernova coherence restructures the multiphase interstellar medium, that structure determines whether a stable rotating disc or a turbulent dispersion-supported system develops, and the resulting neutral-gas geometry regulates photon escape. At the same intrinsic luminosity, the high-escape, dispersion-supported population produces larger ionised regions. Reionisation constraints cannot therefore be interpreted from the ultraviolet luminosity function alone.</p>
+          <figure class="conclusion-figure"><img src="assets/images/summaries/spice-paper-infographic-feedback-reionisation.png" width="1672" height="941" loading="lazy" alt="Publication-style infographic comparing bursty dispersion-supported and smooth rotation-supported galaxies, the associated ionising escape fractions, supernova timing, and H II region sizes at fixed intrinsic ultraviolet luminosity."><figcaption><strong>Kinematics connect feedback to reionisation</strong><span>The same intrinsic stellar source can have a very different ionising impact. Bursty feedback favours porous, dispersion-supported systems with high LyC escape and larger H II regions; smoother feedback permits ordered discs whose surrounding gas absorbs more of the radiation. The image synthesises the paper’s morphology–escape result and is not simulation output.</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="limits-title">
+      <div class="content-grid reveal">
+        <aside class="content-label"><p class="kicker">07 · Limits</p><p>What the paper does not claim to have solved.</p></aside>
+        <div><h2 id="limits-title">Interpret the global history with care</h2><div class="caveat-panel"><h3>Known modelling boundaries</h3><ul><li>The 10 <i>h</i><sup>-1</sup> cMpc volume is too small for a converged global reionisation history; late ionised regions can span tens of comoving Mpc, and boxes above roughly 100 <i>h</i><sup>-1</sup> cMpc are preferred for that purpose.</li><li>Radiation is transported with a reduced speed of light of 0.1<i>c</i>; this is economical but becomes least secure when ionisation fronts accelerate through voids near the end of reionisation.</li><li>The stellar SED, unresolved ISM prescriptions, and simplified dust treatment introduce systematic uncertainty into ionising production and escape.</li><li>Cosmic rays, magnetic fields, and AGN feedback are absent. The paper frames these as important extensions, not negligible effects.</li></ul></div></div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="resources-title">
+      <div class="content-grid reveal"><aside class="content-label"><p class="kicker">08 · Paper</p><p>Primary record and related projects.</p></aside><div><h2 id="resources-title">Read and continue</h2><div class="resource-list" style="margin-top:2rem"><a class="resource-link" href="https://academic.oup.com/mnras/article/531/3/3406/7658468" target="_blank" rel="noopener"><span>Published MNRAS article</span><span aria-hidden="true">↗</span></a><a class="resource-link" href="https://arxiv.org/abs/2310.16895" target="_blank" rel="noopener"><span>Open arXiv version</span><span aria-hidden="true">↗</span></a><a class="resource-link" href="project-uvlf-variability.html"><span>Next: UVLF variability</span><span aria-hidden="true">→</span></a><a class="resource-link" href="publications.html"><span>All SPICE publications</span><span aria-hidden="true">→</span></a></div></div></div>
+    </section>
+    <section class="project-data-footer shell reveal" aria-label="Data availability">
+      <div class="project-data-note">
+        <div><p class="kicker">Data availability</p><h2>Paper-linked public data are planned.</h2></div>
+        <div><p>The team intends to release documented derived products associated with this study. When a collection is ready, the Data index will provide its files, version, licence, documentation, and preferred citation. No public release is advertised yet.</p><a class="text-link" href="data.html">Track planned releases <span aria-hidden="true">→</span></a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-grid"><div><a class="brand" href="index.html">SPICE</a><p>Radiation-hydrodynamics simulations of stellar feedback, the first galaxies, and cosmic reionisation.</p></div><div class="footer-links"><a href="index.html#projects">All projects</a><a href="simulations.html">Project description</a><a href="publications.html">Publications</a></div></div></footer>
+  <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
+</body>
+</html>
