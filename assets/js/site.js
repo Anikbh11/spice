@@ -23,6 +23,16 @@
     revealItems.forEach((item) => item.classList.add("is-visible"));
   }
 
+  const siteHeader = document.querySelector(".site-header");
+  if (siteHeader) {
+    const updateHeader = () => {
+      siteHeader.classList.toggle("is-scrolled", window.scrollY > 12);
+    };
+
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    updateHeader();
+  }
+
   const backToTop = document.querySelector(".back-to-top");
   if (backToTop) {
     const updateBackToTop = () => {
